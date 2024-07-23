@@ -33,6 +33,41 @@
               "zone.js/testing"
             ]
           }
+        },
+        "storybook": {
+          "builder": "@storybook/angular:start-storybook",
+          "options": {
+            "configDir": "projects/ngx-hrm-corporate-ui/.storybook",
+            "browserTarget": "ngx-hrm-corporate-ui:build",
+            "compodoc": true,
+            "compodocArgs": [
+              "-e",
+              "json",
+              "-d",
+              "projects/ngx-hrm-corporate-ui"
+            ],
+            "port": 6006,
+            "styles": [
+              "node_modules/primeng/resources/themes/lara-light-blue/theme.css",
+              "node_modules/primeng/resources/primeng.min.css",
+              "projects/ngx-hrm-corporate-ui/src/lib/theme/theme.scss"
+            ]
+          }
+        },
+        "build-storybook": {
+          "builder": "@storybook/angular:build-storybook",
+          "options": {
+            "configDir": "projects/ngx-hrm-corporate-ui/.storybook",
+            "browserTarget": "ngx-hrm-corporate-ui:build",
+            "compodoc": true,
+            "compodocArgs": [
+              "-e",
+              "json",
+              "-d",
+              "projects/ngx-hrm-corporate-ui"
+            ],
+            "outputDir": "storybook-static"
+          }
         }
       }
     }
