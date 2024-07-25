@@ -6,29 +6,98 @@
     "interceptors": [],
     "classes": [],
     "directives": [],
-    "components": [],
+    "components": [
+        {
+            "name": "SearchComponent",
+            "id": "component-SearchComponent-af7855ce95d2df8f1b44166193315416f080b54a19a8d334184bdf9ce830f220dc1eac6fbb736f50d6a95083cd41e8e1d23734712be471359264099233005ce2",
+            "file": "projects/ngx-hrm-corporate-ui/src/stories/components/select-with-search/select-with-search.stories.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-search",
+            "styleUrls": [],
+            "styles": [],
+            "template": "<div class=\"card flex justify-content-center\">\n  <p-floatLabel>\n    <p-dropdown\n      [options]=\"cities\"\n      [(ngModel)]=\"selectedCity\"\n      optionLabel=\"name\"\n      inputId=\"float-label\"/>\n    <label for=\"float-label\">Select a City</label>\n  </p-floatLabel>\n</div>\n",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "cities",
+                    "defaultValue": "[\r\n    { name: 'New York', code: 'NY' },\r\n    { name: 'Rome', code: 'RM' },\r\n    { name: 'London', code: 'LDN' },\r\n    { name: 'Istanbul', code: 'IST' },\r\n    { name: 'Paris', code: 'PRS' }\r\n  ]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 45
+                },
+                {
+                    "name": "selectedCity",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any",
+                    "optional": false,
+                    "description": "",
+                    "line": 52
+                }
+            ],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "FloatLabelModule",
+                    "type": "module"
+                },
+                {
+                    "name": "DropdownModule",
+                    "type": "module"
+                },
+                {
+                    "name": "FormsModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import {componentWrapperDecorator, Meta, moduleMetadata, StoryObj} from '@storybook/angular';\r\nimport {Dropdown, DropdownModule} from 'primeng/dropdown';\r\nimport {CommonModule} from \"@angular/common\";\r\nimport {BrowserAnimationsModule, NoopAnimationsModule} from \"@angular/platform-browser/animations\";\r\nimport {ChevronDownIcon} from \"primeng/icons/chevrondown\";\r\nimport {Component, Signal} from \"@angular/core\";\r\nimport {OverlayModule} from \"primeng/overlay\";\r\nimport {TooltipModule} from \"primeng/tooltip\";\r\nimport {FormsModule} from \"@angular/forms\";\r\nimport {SpinnerModule} from \"primeng/spinner\";\r\nimport {ScrollerModule} from \"primeng/scroller\";\r\nimport {AutoFocusModule} from \"primeng/autofocus\";\r\nimport {SearchIcon} from \"primeng/icons/search\";\r\nimport {CheckIcon} from \"primeng/icons/check\";\r\nimport {BlankIcon} from \"primeng/icons/blank\";\r\nimport {SharedModule} from \"primeng/api\";\r\nimport {TimesIcon} from \"primeng/icons/times\";\r\nimport {SpinnerIcon} from \"primeng/icons/spinner\";\r\nimport { userEvent, within } from '@storybook/test';\r\nimport {FloatLabelModule} from \"primeng/floatlabel\";\r\nimport { expect } from '@storybook/jest';\r\n\r\n@Component({\r\n  selector: 'app-search',\r\n  standalone: true,\r\n  imports: [\r\n    FloatLabelModule,\r\n    DropdownModule,\r\n    FormsModule\r\n  ],\r\n  template: `\r\n    <div class=\"card flex justify-content-center\">\r\n      <p-floatLabel>\r\n        <p-dropdown\r\n          [options]=\"cities\"\r\n          [(ngModel)]=\"selectedCity\"\r\n          optionLabel=\"name\"\r\n          inputId=\"float-label\"/>\r\n        <label for=\"float-label\">Select a City</label>\r\n      </p-floatLabel>\r\n    </div>\r\n  `\r\n})\r\nexport class SearchComponent {\r\n  cities = [\r\n    { name: 'New York', code: 'NY' },\r\n    { name: 'Rome', code: 'RM' },\r\n    { name: 'London', code: 'LDN' },\r\n    { name: 'Istanbul', code: 'IST' },\r\n    { name: 'Paris', code: 'PRS' }\r\n  ];\r\n  selectedCity: any;\r\n}\r\n\r\n\r\n// More on how to set up stories at: https://storybook.js.org/docs/writing-stories\r\nconst meta: Meta<SearchComponent> = {\r\n  title: 'Primeng/Dropdown',\r\n  decorators: [\r\n    moduleMetadata({\r\n      imports: [\r\n        CommonModule,\r\n        SharedModule,\r\n        BrowserAnimationsModule,\r\n        ChevronDownIcon,\r\n        OverlayModule,\r\n        TooltipModule,\r\n        DropdownModule,\r\n        SpinnerIcon,\r\n        FormsModule,\r\n        SpinnerModule,\r\n        ScrollerModule,\r\n        AutoFocusModule,\r\n        TimesIcon,\r\n        SearchIcon,\r\n        CheckIcon,\r\n        BlankIcon,\r\n        FloatLabelModule\r\n      ]\r\n    }),\r\n    // componentWrapperDecorator((story) => `<p-floatLabel>${story}  <label for=\"float-label\">Select a something</label></p-floatLabel>`)\r\n  ],\r\n  component: SearchComponent,\r\n  tags: ['autodocs'],\r\n  // argTypes: {\r\n  //   options: [],\r\n  //   placeholder: {\r\n  //     control: 'text',\r\n  //     description: 'Indicates whether the placeholder is present.',\r\n  //   },\r\n  //   dataKey: {\r\n  //     control: 'text',\r\n  //     description: 'Indicates whether the datakey is present.',\r\n  //   },\r\n  //   inputId: {\r\n  //     control: 'text',\r\n  //     description: 'Indicated whether the floating label should be present.'\r\n  //   },\r\n  //   showClear: {\r\n  //     control: 'boolean',\r\n  //   },\r\n  //   loading: {\r\n  //     control: 'boolean',\r\n  //     description: 'Indicates whether the dropdown is in a loading state.',\r\n  //   },\r\n  //   styleClass: {\r\n  //     control: 'text',\r\n  //     description: 'CSS class for the component.',\r\n  //   },\r\n  //   readonly: {\r\n  //     control: 'boolean',\r\n  //     description: 'When true, the dropdown is read-only.',\r\n  //   },\r\n  //   required: {\r\n  //     control: 'boolean',\r\n  //     description: 'Specifies if the dropdown is required.',\r\n  //   },\r\n  //   virtualScroll: {\r\n  //     control: 'boolean',\r\n  //     description: 'Enables virtual scrolling for the dropdown.',\r\n  //   },\r\n  //   virtualScrollItemSize: {\r\n  //     control: 'number',\r\n  //     description: 'Specifies the item size for virtual scrolling.',\r\n  //   },\r\n  //   editable: {\r\n  //     control: 'boolean',\r\n  //     description: 'When true, the dropdown is editable.',\r\n  //   },\r\n  //   label: {\r\n  //     type: \"string\",\r\n  //     control: 'text',\r\n  //     description: 'Label for the dropdown.',\r\n  //   },\r\n  //   disabled: {\r\n  //     control: 'boolean',\r\n  //     description: 'Specifies if the component should be disabled.',\r\n  //     name: 'disabled',\r\n  //   },\r\n  //   // You can add more argTypes as needed\r\n  // },\r\n\r\n  parameters: {\r\n    actions: {\r\n      handles: ['onClick', 'onChange'],\r\n    },\r\n    // Add more parameters if needed\r\n  },\r\n};\r\n\r\nexport default meta;\r\ntype Story = StoryObj<SearchComponent>;\r\n\r\n// Default story\r\nexport const Default: Story = {\r\n  // args: {\r\n  //   optionLabel:'name',\r\n  //   inputId: 'float-label',\r\n  //   options: [\r\n  //     { name: 'Select a something', code:'AA'},\r\n  //     { name: 'New York', code: 'NY' },\r\n  //     { name: 'Rome', code: 'RM' },\r\n  //     { name: 'London', code: 'LDN' },\r\n  //     { name: 'Istanbul', code: 'IST' },\r\n  //     { name: 'Paris', code: 'PRS' }\r\n  //   ],\r\n  // }\r\n};\r\n\r\nexport const EditableWithSearch: Story = {\r\n  // args: {\r\n  //   optionLabel:'name',\r\n  //   dataKey:'data-testid',\r\n  //   editable: true,\r\n  //   loading: true,\r\n  //   virtualScroll: true,\r\n  //   options: [\r\n  //     { name: 'New York', code: 'NY' },\r\n  //     { name: 'Rome', code: 'RM' },\r\n  //     { name: 'London', code: 'LDN' },\r\n  //     { name: 'Istanbul', code: 'IST' },\r\n  //     { name: 'Paris', code: 'PRS' },\r\n  //     { name: 'New York', code: 'NY' },\r\n  //     { name: 'Rome', code: 'RM' },\r\n  //     { name: 'London', code: 'LDN' },\r\n  //     { name: 'Istanbul', code: 'IST' },\r\n  //     { name: 'Paris', code: 'PRS' },\r\n  //     { name: 'New York', code: 'NY' },\r\n  //     { name: 'Rome', code: 'RM' },\r\n  //     { name: 'London', code: 'LDN' },\r\n  //     { name: 'Istanbul', code: 'IST' },\r\n  //     { name: 'Paris', code: 'PRS' }\r\n  //   ],\r\n  //   placeholder: 'Select a city' as unknown as Signal<any>\r\n  // }\r\n};\r\n\r\nexport const SearchByInstitution: Story = {\r\n  // args: {\r\n  //   optionLabel:'name',\r\n  //   dataKey:'data-testid',\r\n  //   editable: true,\r\n  //   loading: true,\r\n  //   virtualScroll: true,\r\n  //   options: [\r\n  //     { name: 'New York', code: 'NY' },\r\n  //     { name: 'Rome', code: 'RM' },\r\n  //     { name: 'London', code: 'LDN' },\r\n  //     { name: 'Istanbul', code: 'IST' },\r\n  //     { name: 'Paris', code: 'PRS' },\r\n  //     { name: 'New York', code: 'NY' },\r\n  //     { name: 'Rome', code: 'RM' },\r\n  //     { name: 'London', code: 'LDN' },\r\n  //     { name: 'Istanbul', code: 'IST' },\r\n  //     { name: 'Paris', code: 'PRS' },\r\n  //     { name: 'New York', code: 'NY' },\r\n  //     { name: 'Rome', code: 'RM' },\r\n  //     { name: 'London', code: 'LDN' },\r\n  //     { name: 'Istanbul', code: 'IST' },\r\n  //     { name: 'Paris', code: 'PRS' }\r\n  //   ],\r\n  //   placeholder: 'Select a city' as unknown as Signal<any>\r\n  // },\r\n  play: async ({ args, canvasElement, step }) => {\r\n    const canvas = within(canvasElement);\r\n\r\n    // Step 1: Проверяем состояние загрузки\r\n    await step('Check loading state', async () => {\r\n      const loadingElement = canvas.getByTestId('pi-spinner');\r\n      expect(loadingElement).toBeVisible();\r\n    });\r\n\r\n    // Step 2: Ввод текста в поле ввода\r\n    await step('Enter search text', async () => {\r\n      const inputElement = canvas.getByTestId('input');\r\n      await userEvent.type(inputElement, 'Paris');\r\n    });\r\n\r\n    // Step 3: Проверяем отображение результатов поиска\r\n    await step('Check search results', async () => {\r\n      const options = canvas.getAllByTestId('dropdown-option');\r\n       await expect(options).toHaveLength(1);\r\n             expect(options[0]).toHaveTextContent('Paris');\r\n    });\r\n  },\r\n};\r\n\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": []
+        }
+    ],
     "modules": [],
     "miscellaneous": {
         "variables": [
             {
-                "name": "Initial",
+                "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/ngx-hrm-corporate-ui/src/stories/button.stories.ts",
+                "file": "projects/ngx-hrm-corporate-ui/src/stories/components/select-with-search/select-with-search.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\r\n  args: {\r\n    primary: false,\r\n    label: \"Button\"\r\n  }\r\n}"
+                "defaultValue": "{\r\n  // args: {\r\n  //   optionLabel:'name',\r\n  //   inputId: 'float-label',\r\n  //   options: [\r\n  //     { name: 'Select a something', code:'AA'},\r\n  //     { name: 'New York', code: 'NY' },\r\n  //     { name: 'Rome', code: 'RM' },\r\n  //     { name: 'London', code: 'LDN' },\r\n  //     { name: 'Istanbul', code: 'IST' },\r\n  //     { name: 'Paris', code: 'PRS' }\r\n  //   ],\r\n  // }\r\n}"
             },
             {
-                "name": "Large",
+                "name": "EditableWithSearch",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/ngx-hrm-corporate-ui/src/stories/button.stories.ts",
+                "file": "projects/ngx-hrm-corporate-ui/src/stories/components/select-with-search/select-with-search.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\r\n  args: {\r\n    size: 'large',\r\n    label: 'Button',\r\n  },\r\n}"
+                "defaultValue": "{\r\n  // args: {\r\n  //   optionLabel:'name',\r\n  //   dataKey:'data-testid',\r\n  //   editable: true,\r\n  //   loading: true,\r\n  //   virtualScroll: true,\r\n  //   options: [\r\n  //     { name: 'New York', code: 'NY' },\r\n  //     { name: 'Rome', code: 'RM' },\r\n  //     { name: 'London', code: 'LDN' },\r\n  //     { name: 'Istanbul', code: 'IST' },\r\n  //     { name: 'Paris', code: 'PRS' },\r\n  //     { name: 'New York', code: 'NY' },\r\n  //     { name: 'Rome', code: 'RM' },\r\n  //     { name: 'London', code: 'LDN' },\r\n  //     { name: 'Istanbul', code: 'IST' },\r\n  //     { name: 'Paris', code: 'PRS' },\r\n  //     { name: 'New York', code: 'NY' },\r\n  //     { name: 'Rome', code: 'RM' },\r\n  //     { name: 'London', code: 'LDN' },\r\n  //     { name: 'Istanbul', code: 'IST' },\r\n  //     { name: 'Paris', code: 'PRS' }\r\n  //   ],\r\n  //   placeholder: 'Select a city' as unknown as Signal<any>\r\n  // }\r\n}"
             },
             {
                 "name": "Large",
@@ -41,76 +110,6 @@
                 "defaultValue": "{\n  args: {\n    size: 'large',\n    label: 'Button',\n  },\n}"
             },
             {
-                "name": "LoggedIn",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/ngx-hrm-corporate-ui/src/stories/header.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\n  args: {\n    user: {\n      name: 'Jane Doe',\n    },\n  },\n}"
-            },
-            {
-                "name": "LoggedIn",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/ngx-hrm-corporate-ui/src/stories/page.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\n  play: async ({ canvasElement }) => {\n    const canvas = within(canvasElement);\n    const loginButton = canvas.getByRole('button', { name: /Log in/i });\n    await expect(loginButton).toBeInTheDocument();\n    await userEvent.click(loginButton);\n    await expect(loginButton).not.toBeInTheDocument();\n\n    const logoutButton = canvas.getByRole('button', { name: /Log out/i });\n    await expect(logoutButton).toBeInTheDocument();\n  },\n}"
-            },
-            {
-                "name": "LoggedOut",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/ngx-hrm-corporate-ui/src/stories/header.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{}"
-            },
-            {
-                "name": "LoggedOut",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/ngx-hrm-corporate-ui/src/stories/page.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{}"
-            },
-            {
-                "name": "meta",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/ngx-hrm-corporate-ui/src/stories/button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Meta<ButtonComponent>",
-                "defaultValue": "{\r\n  title: 'Example/Button',\r\n  component: ButtonComponent,\r\n  tags: ['autodocs'],\r\n  argTypes: {\r\n    backgroundColor: {\r\n      control: 'color',\r\n    },\r\n  },\r\n  // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args\r\n  args: { onClick: fn() },\r\n}"
-            },
-            {
-                "name": "meta",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/ngx-hrm-corporate-ui/src/stories/header.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Meta<HeaderComponent>",
-                "defaultValue": "{\n  title: 'Example/Header',\n  component: HeaderComponent,\n  // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs\n  tags: ['autodocs'],\n  parameters: {\n    // More on how to position stories at: https://storybook.js.org/docs/configure/story-layout\n    layout: 'fullscreen',\n  },\n  args: {\n    onLogin: fn(),\n    onLogout: fn(),\n    onCreateAccount: fn(),\n  },\n}"
-            },
-            {
-                "name": "meta",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/ngx-hrm-corporate-ui/src/stories/page.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Meta<PageComponent>",
-                "defaultValue": "{\n  title: 'Example/Page',\n  component: PageComponent,\n  parameters: {\n    // More on how to position stories at: https://storybook.js.org/docs/configure/story-layout\n    layout: 'fullscreen',\n  },\n}"
-            },
-            {
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -119,6 +118,16 @@
                 "deprecationMessage": "",
                 "type": "Meta<Button>",
                 "defaultValue": "{\n  title: 'Primeng/Button',\n  component: Button,\n  tags: ['autodocs'],\n  argTypes: {\n    link: {\n      control: 'boolean',\n    },\n    type: {\n      control: 'text',\n    },\n    loading: {\n      control: 'boolean',\n      description: ''\n    },\n    label: {\n      control: 'text'\n    },\n    badge: {\n      control: 'text'\n    },\n    plain: {\n      control: 'boolean'\n    },\n    raised: {\n      control: 'boolean',\n      description: 'Add a shadow to indicate elevation.'\n    },\n    rounded: {\n      control: 'boolean',\n      description: 'Add a circular border radius to the button.',\n    },\n    severity: {\n      control: {\n        type: 'select',\n      },\n      options: [null, 'success' , 'info' , 'warning' , 'danger' , 'help' , 'primary' , 'secondary' , 'contrast' ],\n      table: {\n        defaultValue: {\n          summary: undefined\n        }\n      },\n      description: 'Defines the style of the button.'\n    },\n    disabled: {\n      control: 'boolean',\n      description: 'When present, it specifies that the component should be disabled.',\n      name: 'disabled',\n    }\n  },\n  // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args\n  // args: { onClick: fn() },\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ngx-hrm-corporate-ui/src/stories/components/select-with-search/select-with-search.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<SearchComponent>",
+                "defaultValue": "{\r\n  title: 'Primeng/Dropdown',\r\n  decorators: [\r\n    moduleMetadata({\r\n      imports: [\r\n        CommonModule,\r\n        SharedModule,\r\n        BrowserAnimationsModule,\r\n        ChevronDownIcon,\r\n        OverlayModule,\r\n        TooltipModule,\r\n        DropdownModule,\r\n        SpinnerIcon,\r\n        FormsModule,\r\n        SpinnerModule,\r\n        ScrollerModule,\r\n        AutoFocusModule,\r\n        TimesIcon,\r\n        SearchIcon,\r\n        CheckIcon,\r\n        BlankIcon,\r\n        FloatLabelModule\r\n      ]\r\n    }),\r\n    // componentWrapperDecorator((story) => `<p-floatLabel>${story}  <label for=\"float-label\">Select a something</label></p-floatLabel>`)\r\n  ],\r\n  component: SearchComponent,\r\n  tags: ['autodocs'],\r\n  // argTypes: {\r\n  //   options: [],\r\n  //   placeholder: {\r\n  //     control: 'text',\r\n  //     description: 'Indicates whether the placeholder is present.',\r\n  //   },\r\n  //   dataKey: {\r\n  //     control: 'text',\r\n  //     description: 'Indicates whether the datakey is present.',\r\n  //   },\r\n  //   inputId: {\r\n  //     control: 'text',\r\n  //     description: 'Indicated whether the floating label should be present.'\r\n  //   },\r\n  //   showClear: {\r\n  //     control: 'boolean',\r\n  //   },\r\n  //   loading: {\r\n  //     control: 'boolean',\r\n  //     description: 'Indicates whether the dropdown is in a loading state.',\r\n  //   },\r\n  //   styleClass: {\r\n  //     control: 'text',\r\n  //     description: 'CSS class for the component.',\r\n  //   },\r\n  //   readonly: {\r\n  //     control: 'boolean',\r\n  //     description: 'When true, the dropdown is read-only.',\r\n  //   },\r\n  //   required: {\r\n  //     control: 'boolean',\r\n  //     description: 'Specifies if the dropdown is required.',\r\n  //   },\r\n  //   virtualScroll: {\r\n  //     control: 'boolean',\r\n  //     description: 'Enables virtual scrolling for the dropdown.',\r\n  //   },\r\n  //   virtualScrollItemSize: {\r\n  //     control: 'number',\r\n  //     description: 'Specifies the item size for virtual scrolling.',\r\n  //   },\r\n  //   editable: {\r\n  //     control: 'boolean',\r\n  //     description: 'When true, the dropdown is editable.',\r\n  //   },\r\n  //   label: {\r\n  //     type: \"string\",\r\n  //     control: 'text',\r\n  //     description: 'Label for the dropdown.',\r\n  //   },\r\n  //   disabled: {\r\n  //     control: 'boolean',\r\n  //     description: 'Specifies if the component should be disabled.',\r\n  //     name: 'disabled',\r\n  //   },\r\n  //   // You can add more argTypes as needed\r\n  // },\r\n\r\n  parameters: {\r\n    actions: {\r\n      handles: ['onClick', 'onChange'],\r\n    },\r\n    // Add more parameters if needed\r\n  },\r\n}"
             },
             {
                 "name": "preview",
@@ -134,16 +143,6 @@
                 "name": "Primary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/ngx-hrm-corporate-ui/src/stories/button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\r\n  args: {\r\n    primary: true,\r\n    label: 'Button',\r\n  },\r\n}"
-            },
-            {
-                "name": "Primary",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "projects/ngx-hrm-corporate-ui/src/stories/components/button/button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -151,14 +150,14 @@
                 "defaultValue": "{\n  args: {\n    label: 'Button',\n  },\n}"
             },
             {
-                "name": "Secondary",
+                "name": "SearchByInstitution",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/ngx-hrm-corporate-ui/src/stories/button.stories.ts",
+                "file": "projects/ngx-hrm-corporate-ui/src/stories/components/select-with-search/select-with-search.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\r\n  args: {\r\n    label: 'Button',\r\n  },\r\n}"
+                "defaultValue": "{\r\n  // args: {\r\n  //   optionLabel:'name',\r\n  //   dataKey:'data-testid',\r\n  //   editable: true,\r\n  //   loading: true,\r\n  //   virtualScroll: true,\r\n  //   options: [\r\n  //     { name: 'New York', code: 'NY' },\r\n  //     { name: 'Rome', code: 'RM' },\r\n  //     { name: 'London', code: 'LDN' },\r\n  //     { name: 'Istanbul', code: 'IST' },\r\n  //     { name: 'Paris', code: 'PRS' },\r\n  //     { name: 'New York', code: 'NY' },\r\n  //     { name: 'Rome', code: 'RM' },\r\n  //     { name: 'London', code: 'LDN' },\r\n  //     { name: 'Istanbul', code: 'IST' },\r\n  //     { name: 'Paris', code: 'PRS' },\r\n  //     { name: 'New York', code: 'NY' },\r\n  //     { name: 'Rome', code: 'RM' },\r\n  //     { name: 'London', code: 'LDN' },\r\n  //     { name: 'Istanbul', code: 'IST' },\r\n  //     { name: 'Paris', code: 'PRS' }\r\n  //   ],\r\n  //   placeholder: 'Select a city' as unknown as Signal<any>\r\n  // },\r\n  play: async ({ args, canvasElement, step }) => {\r\n    const canvas = within(canvasElement);\r\n\r\n    // Step 1: Проверяем состояние загрузки\r\n    await step('Check loading state', async () => {\r\n      const loadingElement = canvas.getByTestId('pi-spinner');\r\n      expect(loadingElement).toBeVisible();\r\n    });\r\n\r\n    // Step 2: Ввод текста в поле ввода\r\n    await step('Enter search text', async () => {\r\n      const inputElement = canvas.getByTestId('input');\r\n      await userEvent.type(inputElement, 'Paris');\r\n    });\r\n\r\n    // Step 3: Проверяем отображение результатов поиска\r\n    await step('Check search results', async () => {\r\n      const options = canvas.getAllByTestId('dropdown-option');\r\n       await expect(options).toHaveLength(1);\r\n             expect(options[0]).toHaveTextContent('Paris');\r\n    });\r\n  },\r\n}"
             },
             {
                 "name": "Secondary",
@@ -169,16 +168,6 @@
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\n  args: {\n    label: 'Button',\n  },\n}"
-            },
-            {
-                "name": "Small",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/ngx-hrm-corporate-ui/src/stories/button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\r\n  args: {\r\n    size: 'small',\r\n    label: 'Button',\r\n  },\r\n}"
             },
             {
                 "name": "Small",
@@ -197,41 +186,19 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<ButtonComponent>",
-                "file": "projects/ngx-hrm-corporate-ui/src/stories/button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "description": "",
-                "kind": 183
-            },
-            {
-                "name": "Story",
-                "ctype": "miscellaneous",
-                "subtype": "typealias",
-                "rawtype": "StoryObj<HeaderComponent>",
-                "file": "projects/ngx-hrm-corporate-ui/src/stories/header.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "description": "",
-                "kind": 183
-            },
-            {
-                "name": "Story",
-                "ctype": "miscellaneous",
-                "subtype": "typealias",
-                "rawtype": "StoryObj<PageComponent>",
-                "file": "projects/ngx-hrm-corporate-ui/src/stories/page.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "description": "",
-                "kind": 183
-            },
-            {
-                "name": "Story",
-                "ctype": "miscellaneous",
-                "subtype": "typealias",
                 "rawtype": "StoryObj<Button>",
                 "file": "projects/ngx-hrm-corporate-ui/src/stories/components/button/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<SearchComponent>",
+                "file": "projects/ngx-hrm-corporate-ui/src/stories/components/select-with-search/select-with-search.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -240,66 +207,46 @@
         ],
         "enumerations": [],
         "groupedVariables": {
-            "projects/ngx-hrm-corporate-ui/src/stories/button.stories.ts": [
+            "projects/ngx-hrm-corporate-ui/src/stories/components/select-with-search/select-with-search.stories.ts": [
                 {
-                    "name": "Initial",
+                    "name": "Default",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/ngx-hrm-corporate-ui/src/stories/button.stories.ts",
+                    "file": "projects/ngx-hrm-corporate-ui/src/stories/components/select-with-search/select-with-search.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\r\n  args: {\r\n    primary: false,\r\n    label: \"Button\"\r\n  }\r\n}"
+                    "defaultValue": "{\r\n  // args: {\r\n  //   optionLabel:'name',\r\n  //   inputId: 'float-label',\r\n  //   options: [\r\n  //     { name: 'Select a something', code:'AA'},\r\n  //     { name: 'New York', code: 'NY' },\r\n  //     { name: 'Rome', code: 'RM' },\r\n  //     { name: 'London', code: 'LDN' },\r\n  //     { name: 'Istanbul', code: 'IST' },\r\n  //     { name: 'Paris', code: 'PRS' }\r\n  //   ],\r\n  // }\r\n}"
                 },
                 {
-                    "name": "Large",
+                    "name": "EditableWithSearch",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/ngx-hrm-corporate-ui/src/stories/button.stories.ts",
+                    "file": "projects/ngx-hrm-corporate-ui/src/stories/components/select-with-search/select-with-search.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\r\n  args: {\r\n    size: 'large',\r\n    label: 'Button',\r\n  },\r\n}"
+                    "defaultValue": "{\r\n  // args: {\r\n  //   optionLabel:'name',\r\n  //   dataKey:'data-testid',\r\n  //   editable: true,\r\n  //   loading: true,\r\n  //   virtualScroll: true,\r\n  //   options: [\r\n  //     { name: 'New York', code: 'NY' },\r\n  //     { name: 'Rome', code: 'RM' },\r\n  //     { name: 'London', code: 'LDN' },\r\n  //     { name: 'Istanbul', code: 'IST' },\r\n  //     { name: 'Paris', code: 'PRS' },\r\n  //     { name: 'New York', code: 'NY' },\r\n  //     { name: 'Rome', code: 'RM' },\r\n  //     { name: 'London', code: 'LDN' },\r\n  //     { name: 'Istanbul', code: 'IST' },\r\n  //     { name: 'Paris', code: 'PRS' },\r\n  //     { name: 'New York', code: 'NY' },\r\n  //     { name: 'Rome', code: 'RM' },\r\n  //     { name: 'London', code: 'LDN' },\r\n  //     { name: 'Istanbul', code: 'IST' },\r\n  //     { name: 'Paris', code: 'PRS' }\r\n  //   ],\r\n  //   placeholder: 'Select a city' as unknown as Signal<any>\r\n  // }\r\n}"
                 },
                 {
                     "name": "meta",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/ngx-hrm-corporate-ui/src/stories/button.stories.ts",
+                    "file": "projects/ngx-hrm-corporate-ui/src/stories/components/select-with-search/select-with-search.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "Meta<ButtonComponent>",
-                    "defaultValue": "{\r\n  title: 'Example/Button',\r\n  component: ButtonComponent,\r\n  tags: ['autodocs'],\r\n  argTypes: {\r\n    backgroundColor: {\r\n      control: 'color',\r\n    },\r\n  },\r\n  // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args\r\n  args: { onClick: fn() },\r\n}"
+                    "type": "Meta<SearchComponent>",
+                    "defaultValue": "{\r\n  title: 'Primeng/Dropdown',\r\n  decorators: [\r\n    moduleMetadata({\r\n      imports: [\r\n        CommonModule,\r\n        SharedModule,\r\n        BrowserAnimationsModule,\r\n        ChevronDownIcon,\r\n        OverlayModule,\r\n        TooltipModule,\r\n        DropdownModule,\r\n        SpinnerIcon,\r\n        FormsModule,\r\n        SpinnerModule,\r\n        ScrollerModule,\r\n        AutoFocusModule,\r\n        TimesIcon,\r\n        SearchIcon,\r\n        CheckIcon,\r\n        BlankIcon,\r\n        FloatLabelModule\r\n      ]\r\n    }),\r\n    // componentWrapperDecorator((story) => `<p-floatLabel>${story}  <label for=\"float-label\">Select a something</label></p-floatLabel>`)\r\n  ],\r\n  component: SearchComponent,\r\n  tags: ['autodocs'],\r\n  // argTypes: {\r\n  //   options: [],\r\n  //   placeholder: {\r\n  //     control: 'text',\r\n  //     description: 'Indicates whether the placeholder is present.',\r\n  //   },\r\n  //   dataKey: {\r\n  //     control: 'text',\r\n  //     description: 'Indicates whether the datakey is present.',\r\n  //   },\r\n  //   inputId: {\r\n  //     control: 'text',\r\n  //     description: 'Indicated whether the floating label should be present.'\r\n  //   },\r\n  //   showClear: {\r\n  //     control: 'boolean',\r\n  //   },\r\n  //   loading: {\r\n  //     control: 'boolean',\r\n  //     description: 'Indicates whether the dropdown is in a loading state.',\r\n  //   },\r\n  //   styleClass: {\r\n  //     control: 'text',\r\n  //     description: 'CSS class for the component.',\r\n  //   },\r\n  //   readonly: {\r\n  //     control: 'boolean',\r\n  //     description: 'When true, the dropdown is read-only.',\r\n  //   },\r\n  //   required: {\r\n  //     control: 'boolean',\r\n  //     description: 'Specifies if the dropdown is required.',\r\n  //   },\r\n  //   virtualScroll: {\r\n  //     control: 'boolean',\r\n  //     description: 'Enables virtual scrolling for the dropdown.',\r\n  //   },\r\n  //   virtualScrollItemSize: {\r\n  //     control: 'number',\r\n  //     description: 'Specifies the item size for virtual scrolling.',\r\n  //   },\r\n  //   editable: {\r\n  //     control: 'boolean',\r\n  //     description: 'When true, the dropdown is editable.',\r\n  //   },\r\n  //   label: {\r\n  //     type: \"string\",\r\n  //     control: 'text',\r\n  //     description: 'Label for the dropdown.',\r\n  //   },\r\n  //   disabled: {\r\n  //     control: 'boolean',\r\n  //     description: 'Specifies if the component should be disabled.',\r\n  //     name: 'disabled',\r\n  //   },\r\n  //   // You can add more argTypes as needed\r\n  // },\r\n\r\n  parameters: {\r\n    actions: {\r\n      handles: ['onClick', 'onChange'],\r\n    },\r\n    // Add more parameters if needed\r\n  },\r\n}"
                 },
                 {
-                    "name": "Primary",
+                    "name": "SearchByInstitution",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/ngx-hrm-corporate-ui/src/stories/button.stories.ts",
+                    "file": "projects/ngx-hrm-corporate-ui/src/stories/components/select-with-search/select-with-search.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\r\n  args: {\r\n    primary: true,\r\n    label: 'Button',\r\n  },\r\n}"
-                },
-                {
-                    "name": "Secondary",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/ngx-hrm-corporate-ui/src/stories/button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\r\n  args: {\r\n    label: 'Button',\r\n  },\r\n}"
-                },
-                {
-                    "name": "Small",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/ngx-hrm-corporate-ui/src/stories/button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\r\n  args: {\r\n    size: 'small',\r\n    label: 'Button',\r\n  },\r\n}"
+                    "defaultValue": "{\r\n  // args: {\r\n  //   optionLabel:'name',\r\n  //   dataKey:'data-testid',\r\n  //   editable: true,\r\n  //   loading: true,\r\n  //   virtualScroll: true,\r\n  //   options: [\r\n  //     { name: 'New York', code: 'NY' },\r\n  //     { name: 'Rome', code: 'RM' },\r\n  //     { name: 'London', code: 'LDN' },\r\n  //     { name: 'Istanbul', code: 'IST' },\r\n  //     { name: 'Paris', code: 'PRS' },\r\n  //     { name: 'New York', code: 'NY' },\r\n  //     { name: 'Rome', code: 'RM' },\r\n  //     { name: 'London', code: 'LDN' },\r\n  //     { name: 'Istanbul', code: 'IST' },\r\n  //     { name: 'Paris', code: 'PRS' },\r\n  //     { name: 'New York', code: 'NY' },\r\n  //     { name: 'Rome', code: 'RM' },\r\n  //     { name: 'London', code: 'LDN' },\r\n  //     { name: 'Istanbul', code: 'IST' },\r\n  //     { name: 'Paris', code: 'PRS' }\r\n  //   ],\r\n  //   placeholder: 'Select a city' as unknown as Signal<any>\r\n  // },\r\n  play: async ({ args, canvasElement, step }) => {\r\n    const canvas = within(canvasElement);\r\n\r\n    // Step 1: Проверяем состояние загрузки\r\n    await step('Check loading state', async () => {\r\n      const loadingElement = canvas.getByTestId('pi-spinner');\r\n      expect(loadingElement).toBeVisible();\r\n    });\r\n\r\n    // Step 2: Ввод текста в поле ввода\r\n    await step('Enter search text', async () => {\r\n      const inputElement = canvas.getByTestId('input');\r\n      await userEvent.type(inputElement, 'Paris');\r\n    });\r\n\r\n    // Step 3: Проверяем отображение результатов поиска\r\n    await step('Check search results', async () => {\r\n      const options = canvas.getAllByTestId('dropdown-option');\r\n       await expect(options).toHaveLength(1);\r\n             expect(options[0]).toHaveTextContent('Paris');\r\n    });\r\n  },\r\n}"
                 }
             ],
             "projects/ngx-hrm-corporate-ui/src/stories/components/button/button.stories.ts": [
@@ -354,70 +301,6 @@
                     "defaultValue": "{\n  args: {\n    size: 'small',\n    label: 'Button',\n  },\n}"
                 }
             ],
-            "projects/ngx-hrm-corporate-ui/src/stories/header.stories.ts": [
-                {
-                    "name": "LoggedIn",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/ngx-hrm-corporate-ui/src/stories/header.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {\n    user: {\n      name: 'Jane Doe',\n    },\n  },\n}"
-                },
-                {
-                    "name": "LoggedOut",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/ngx-hrm-corporate-ui/src/stories/header.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{}"
-                },
-                {
-                    "name": "meta",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/ngx-hrm-corporate-ui/src/stories/header.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Meta<HeaderComponent>",
-                    "defaultValue": "{\n  title: 'Example/Header',\n  component: HeaderComponent,\n  // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs\n  tags: ['autodocs'],\n  parameters: {\n    // More on how to position stories at: https://storybook.js.org/docs/configure/story-layout\n    layout: 'fullscreen',\n  },\n  args: {\n    onLogin: fn(),\n    onLogout: fn(),\n    onCreateAccount: fn(),\n  },\n}"
-                }
-            ],
-            "projects/ngx-hrm-corporate-ui/src/stories/page.stories.ts": [
-                {
-                    "name": "LoggedIn",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/ngx-hrm-corporate-ui/src/stories/page.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  play: async ({ canvasElement }) => {\n    const canvas = within(canvasElement);\n    const loginButton = canvas.getByRole('button', { name: /Log in/i });\n    await expect(loginButton).toBeInTheDocument();\n    await userEvent.click(loginButton);\n    await expect(loginButton).not.toBeInTheDocument();\n\n    const logoutButton = canvas.getByRole('button', { name: /Log out/i });\n    await expect(logoutButton).toBeInTheDocument();\n  },\n}"
-                },
-                {
-                    "name": "LoggedOut",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/ngx-hrm-corporate-ui/src/stories/page.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{}"
-                },
-                {
-                    "name": "meta",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/ngx-hrm-corporate-ui/src/stories/page.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Meta<PageComponent>",
-                    "defaultValue": "{\n  title: 'Example/Page',\n  component: PageComponent,\n  parameters: {\n    // More on how to position stories at: https://storybook.js.org/docs/configure/story-layout\n    layout: 'fullscreen',\n  },\n}"
-                }
-            ],
             "projects/ngx-hrm-corporate-ui/.storybook/preview.ts": [
                 {
                     "name": "preview",
@@ -434,45 +317,6 @@
         "groupedFunctions": {},
         "groupedEnumerations": {},
         "groupedTypeAliases": {
-            "projects/ngx-hrm-corporate-ui/src/stories/button.stories.ts": [
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<ButtonComponent>",
-                    "file": "projects/ngx-hrm-corporate-ui/src/stories/button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 183
-                }
-            ],
-            "projects/ngx-hrm-corporate-ui/src/stories/header.stories.ts": [
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<HeaderComponent>",
-                    "file": "projects/ngx-hrm-corporate-ui/src/stories/header.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 183
-                }
-            ],
-            "projects/ngx-hrm-corporate-ui/src/stories/page.stories.ts": [
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<PageComponent>",
-                    "file": "projects/ngx-hrm-corporate-ui/src/stories/page.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 183
-                }
-            ],
             "projects/ngx-hrm-corporate-ui/src/stories/components/button/button.stories.ts": [
                 {
                     "name": "Story",
@@ -480,6 +324,19 @@
                     "subtype": "typealias",
                     "rawtype": "StoryObj<Button>",
                     "file": "projects/ngx-hrm-corporate-ui/src/stories/components/button/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "projects/ngx-hrm-corporate-ui/src/stories/components/select-with-search/select-with-search.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<SearchComponent>",
+                    "file": "projects/ngx-hrm-corporate-ui/src/stories/components/select-with-search/select-with-search.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -504,66 +361,6 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/ngx-hrm-corporate-ui/src/stories/button.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Initial",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "projects/ngx-hrm-corporate-ui/src/stories/button.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Large",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "projects/ngx-hrm-corporate-ui/src/stories/button.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "meta",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "projects/ngx-hrm-corporate-ui/src/stories/button.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Primary",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "projects/ngx-hrm-corporate-ui/src/stories/button.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Secondary",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "projects/ngx-hrm-corporate-ui/src/stories/button.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Small",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
                 "filePath": "projects/ngx-hrm-corporate-ui/src/stories/components/button/button.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
@@ -614,27 +411,36 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/ngx-hrm-corporate-ui/src/stories/header.stories.ts",
+                "filePath": "projects/ngx-hrm-corporate-ui/src/stories/components/select-with-search/select-with-search.stories.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "SearchComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ngx-hrm-corporate-ui/src/stories/components/select-with-search/select-with-search.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "LoggedIn",
+                "name": "Default",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
             },
             {
-                "filePath": "projects/ngx-hrm-corporate-ui/src/stories/header.stories.ts",
+                "filePath": "projects/ngx-hrm-corporate-ui/src/stories/components/select-with-search/select-with-search.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "LoggedOut",
+                "name": "EditableWithSearch",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
             },
             {
-                "filePath": "projects/ngx-hrm-corporate-ui/src/stories/header.stories.ts",
+                "filePath": "projects/ngx-hrm-corporate-ui/src/stories/components/select-with-search/select-with-search.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -644,31 +450,11 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/ngx-hrm-corporate-ui/src/stories/page.stories.ts",
+                "filePath": "projects/ngx-hrm-corporate-ui/src/stories/components/select-with-search/select-with-search.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "LoggedIn",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "projects/ngx-hrm-corporate-ui/src/stories/page.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "LoggedOut",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "projects/ngx-hrm-corporate-ui/src/stories/page.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "meta",
+                "name": "SearchByInstitution",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
