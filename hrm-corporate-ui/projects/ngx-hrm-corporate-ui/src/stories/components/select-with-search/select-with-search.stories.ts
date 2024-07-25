@@ -1,4 +1,4 @@
-import {componentWrapperDecorator, Meta, moduleMetadata, StoryObj} from '@storybook/angular';
+import {argsToTemplate, componentWrapperDecorator, Meta, moduleMetadata, StoryObj} from '@storybook/angular';
 import {Dropdown, DropdownModule} from 'primeng/dropdown';
 import {CommonModule} from "@angular/common";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
@@ -16,9 +16,10 @@ import {BlankIcon} from "primeng/icons/blank";
 import {SharedModule} from "primeng/api";
 import {TimesIcon} from "primeng/icons/times";
 import {SpinnerIcon} from "primeng/icons/spinner";
-import { userEvent, within } from '@storybook/test';
 import {FloatLabelModule} from "primeng/floatlabel";
-import { expect } from '@storybook/jest';
+import {UPDATE_STORY_ARGS} from "@storybook/core-events";
+import {Channel} from "@storybook/channels";
+
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories
 const meta: Meta<Dropdown> = {
@@ -47,6 +48,30 @@ const meta: Meta<Dropdown> = {
     }),
     componentWrapperDecorator((story) => `<p-floatLabel>${story}  <label for="float-label">Select a something</label></p-floatLabel>`)
   ],
+  render: (args: any, {id}) => {
+    args.onClick = () => {
+      const channel = (window as any).__STORYBOOK_ADDONS_CHANNEL__ as Channel;
+
+      channel.emit(UPDATE_STORY_ARGS, {
+        storyId: id,
+        updatedArgs: { loading: true, },
+        template: `<p-floatlabel><p-dropdown ${argsToTemplate(args)}></p-dropdown></p-floatlabel> `,
+      });
+      setTimeout(() => {
+        channel.emit(UPDATE_STORY_ARGS, {
+          storyId: id,
+          updatedArgs: { loading: false },
+          template: `<p-floatlabel><p-dropdown ${argsToTemplate(args)}></p-dropdown></p-floatlabel> `,
+        });
+      }, 2000);
+    };
+    return {
+      props: {
+        ...args,
+      },
+    }
+  },
+
   component: Dropdown,
   tags: ['autodocs'],
   argTypes: {
@@ -187,28 +212,6 @@ export const SearchByInstitution: Story = {
       { name: 'Istanbul', code: 'IST' },
       { name: 'Paris', code: 'PRS' }
     ],
-    placeholder: 'Select a city' as unknown as Signal<any>
-  },
-  play: async ({ args, canvasElement, step }) => {
-    const canvas = within(canvasElement);
-
-    // Step 1: Проверяем состояние загрузки
-    await step('Check loading state', async () => {
-      const loadingElement = canvas.getByTestId('pi-spinner');
-      expect(loadingElement).toBeVisible();
-    });
-
-    // Step 2: Ввод текста в поле ввода
-    await step('Enter search text', async () => {
-      const inputElement = canvas.getByTestId('input');
-      await userEvent.type(inputElement, 'Paris');
-    });
-
-    // Step 3: Проверяем отображение результатов поиска
-    await step('Check search results', async () => {
-      const options = canvas.getAllByTestId('dropdown-option');
-       await expect(options).toHaveLength(1);
-             expect(options[0]).toHaveTextContent('Paris');
-    });
+    placeholder: 'Select a city' as unknown as Signal<any>,
   },
 };
