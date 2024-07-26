@@ -324,11 +324,11 @@ $dangerButtonFocusShadow: 0 0 0 0.2rem lighten($dangerButtonBg, 35%);
 
 /// Text color of a link button
 /// @group button
-$linkButtonColor:$primaryColor;
+$linkButtonColor: #0057FF;
 
 /// Text color of a link button in hover state
 /// @group button
-$linkButtonHoverColor:$primaryColor;
+$linkButtonHoverColor: #0057FF;
 
 /// Text decoration of a link button in hover state
 /// @group button
