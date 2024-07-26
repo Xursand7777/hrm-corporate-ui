@@ -23,8 +23,8 @@ const meta: Meta<Button> = {
     badge: {
       control: 'text'
     },
-    plain: {
-      control: 'boolean'
+    text: {
+      control:'boolean'
     },
     raised: {
       control: 'boolean',
@@ -46,6 +46,19 @@ const meta: Meta<Button> = {
       },
       description: 'Defines the style of the button.'
     },
+    icon:{
+      control: 'select',
+      options: ['none', 'check icon', 'image icon'],
+      mapping: {
+        'none': null,
+        'check icon': 'pi pi-check',
+        'image icon': 'pi pi-image'
+      }
+    },
+    iconPos: {
+      control: 'radio',
+      options: ['right', 'left']
+    },
     disabled: {
       control: 'boolean',
       description: 'When present, it specifies that the component should be disabled.',
@@ -66,22 +79,103 @@ export const Primary: Story = {
   },
 };
 
-export const Secondary: Story = {
+export const Disabled: Story = {
   args: {
     label: 'Button',
+    disabled: true,
   },
 };
 
-export const Large: Story = {
+export const Rounded: Story = {
   args: {
-    size: 'large',
     label: 'Button',
+    rounded: true,
   },
 };
+
+export const Outlined: Story = {
+  args: {
+    label: 'Button',
+    outlined: true,
+  },
+};
+
+export const OutlinedRounded: Story = {
+  args: {
+    label: 'Button',
+    rounded: true,
+    outlined: true,
+  },
+};
+
+export const OutlinedWithIcon: Story = {
+  args: {
+    label: 'Button',
+    outlined: true,
+    icon: 'pi pi-image',
+    iconPos: 'right'
+  },
+};
+
+export const Text: Story = {
+  args: {
+    label: 'Button',
+    text: true,
+  },
+};
+
+export const TextWithIcon: Story = {
+  args: {
+    label: 'Button',
+    text: true,
+    icon: 'pi pi-image',
+    iconPos: 'right'
+  },
+};
+
+export const Link: Story = {
+  args: {
+    label: 'Button',
+    link: true
+  },
+};
+
+
 
 export const Small: Story = {
   args: {
-    size: 'small',
     label: 'Button',
+    size: 'small'
   },
 };
+
+export const SmallWithIcon: Story = {
+  args: {
+    label: 'Button',
+    size: 'small',
+    icon: 'pi pi-image',
+    iconPos: 'right'
+  },
+};
+
+export const IconOnly: Story = {
+  args: {
+    icon: 'pi pi-image',
+  },
+};
+
+export const IconOnlyOutline: Story = {
+  args: {
+    icon: 'pi pi-image',
+    outlined: true
+  },
+};
+
+export const IconOnlyText: Story = {
+  args: {
+    icon: 'pi pi-image',
+    text: true
+  },
+};
+
+

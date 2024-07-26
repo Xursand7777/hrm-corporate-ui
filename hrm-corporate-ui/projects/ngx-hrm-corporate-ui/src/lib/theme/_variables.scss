@@ -1,7 +1,7 @@
 // Theme Specific Variables
-$primaryColor: #2196F3;
-$primaryDarkColor: #1E88E5;
-$primaryDarkerColor: #1976D2;
+$primaryColor: #6366F1;
+$primaryDarkColor: #4A4CB5;
+$primaryDarkerColor: #3B3D91;
 $primaryTextColor: #ffffff;
 
 $colors: (
@@ -16,6 +16,10 @@ $colors: (
   "bluegray": #607D8B,
   "purple": #9C27B0,
   "red": #FF4032,
+  "success": #22C55E,
+  "success-secondary": #DCFCE7,
+  "error": #DC2626,
+  "error-secondary": #FECACA,
   "primary": $primaryColor
 );
 

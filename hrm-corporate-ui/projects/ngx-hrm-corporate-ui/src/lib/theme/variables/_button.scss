@@ -1,14 +1,14 @@
 /// Padding of a button, must be defined with a shorthand for vertical and horizontal values e.g. ".5rem .5rem"
 /// @group button
-$buttonPadding: .5rem 1rem;
+$buttonPadding: .5rem 1.25rem;
 
 /// Width of a button having an icon with no label
 /// @group button
-$buttonIconOnlyWidth: 2.357rem;
+$buttonIconOnlyWidth: 1.875rem;
 
 /// Padding of a button having an icon with no label
 /// @group button
-$buttonIconOnlyPadding: .5rem 0;
+$buttonIconOnlyPadding: .375rem 0;
 
 /// Background of a button
 /// @group button
@@ -62,9 +62,13 @@ $textButtonHoverBgOpacity:.04;
 /// @group button
 $textButtonActiveBgOpacity:.16;
 
+/// Text color of an outlined button
+/// @group button
+$outlinedButtonTextColor: #334155;
+
 /// Border style of a outlined button
 /// @group button
-$outlinedButtonBorder:1px solid;
+$outlinedButtonBorder:1px solid $buttonBg;
 
 /// Text color of a plain text button
 /// @group button
@@ -320,11 +324,11 @@ $dangerButtonFocusShadow: 0 0 0 0.2rem lighten($dangerButtonBg, 35%);
 
 /// Text color of a link button
 /// @group button
-$linkButtonColor:$primaryDarkerColor;
+$linkButtonColor: #0057FF;
 
 /// Text color of a link button in hover state
 /// @group button
-$linkButtonHoverColor:$primaryDarkerColor;
+$linkButtonHoverColor: #0057FF;
 
 /// Text decoration of a link button in hover state
 /// @group button
