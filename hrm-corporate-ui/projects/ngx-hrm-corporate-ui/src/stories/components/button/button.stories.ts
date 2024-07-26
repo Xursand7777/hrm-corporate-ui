@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/angular';
+import {componentWrapperDecorator, Meta, StoryObj} from '@storybook/angular';
 import { Button } from 'primeng/button';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories
