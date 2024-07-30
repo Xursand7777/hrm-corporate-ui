@@ -32,7 +32,7 @@ $highlightFocusBg: rgba($primaryColor, .24) !default;
 
 /// Radius of the corners
 /// @group general
-$borderRadius: 3px;
+$borderRadius: 6px;
 
 /// Duration of the property transitions
 /// @group general
@@ -64,7 +64,7 @@ $inlineSpacing: .5rem;
 
 /// Opacity of the disabled elements
 /// @group general
-$disabledOpacity: .8;
+$disabledOpacity: .5;
 
 /// Background of the modal layer
 /// @group general
