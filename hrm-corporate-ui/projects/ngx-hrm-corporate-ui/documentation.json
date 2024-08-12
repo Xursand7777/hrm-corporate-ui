@@ -24,11 +24,31 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "projects/ngx-hrm-corporate-ui/src/stories/components/table/table.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  args: {\r\n\r\n    value: [\r\n      {\r\n        id: '1000',\r\n        code: 'f230fh0g3',\r\n        name: 'Bamboo Watch',\r\n        description: 'Product Description',\r\n        image: 'bamboo-watch.jpg',\r\n        price: 65,\r\n        category: 'Accessories',\r\n        quantity: 12,\r\n        inventoryStatus: 'INSTOCK',\r\n        rating: 5\r\n      },\r\n      {\r\n        id: '1000',\r\n        code: 'f230fh0g3',\r\n        name: 'Bamboo Watch',\r\n        description: 'Product Description',\r\n        image: 'bamboo-watch.jpg',\r\n        price: 80,\r\n        category: 'Accessories',\r\n        quantity: 24,\r\n        inventoryStatus: 'INSTOCK',\r\n        rating: 5\r\n      },\r\n      {\r\n        id: '1000',\r\n        code: 'f230fh0g3',\r\n        name: 'Bamboo Watch',\r\n        description: 'Product Description',\r\n        image: 'bamboo-watch.jpg',\r\n        price: 34,\r\n        category: 'Accessories',\r\n        quantity: 24,\r\n        inventoryStatus: 'INSTOCK',\r\n        rating: 5\r\n      },\r\n    ]\r\n  },\r\n}"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "projects/ngx-hrm-corporate-ui/src/stories/components/select-with-search/select-with-search.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\r\n  args: {\r\n    optionLabel:'name',\r\n    options: [\r\n      { name: 'Select a something', code:'AA'},\r\n      { name: 'New York', code: 'NY' },\r\n      { name: 'Rome', code: 'RM' },\r\n      { name: 'London', code: 'LDN' },\r\n      { name: 'Istanbul', code: 'IST' },\r\n      { name: 'Paris', code: 'PRS' }\r\n    ],\r\n    placeholder: 'Select a something' as unknown as Signal<any>\r\n  }\r\n}"
+            },
+            {
+                "name": "Disabled",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ngx-hrm-corporate-ui/src/stories/components/accordion/accordion.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  render: (args: any) => ({\r\n    template: `\r\n    <p-accordion [multiple]=\"${args.multiple}\" [activeIndex]=\"${0}\">\r\n      <p-accordionTab header=\"Header I\">\r\n          <p class=\"text-xs font-medium text-black\">\r\n              Lorem ipsum dolor sit amet...\r\n          </p>\r\n      </p-accordionTab>\r\n      <p-accordionTab header=\"Header II\">\r\n          <p class=\"text-xs font-medium text-black\">\r\n              Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium...\r\n          </p>\r\n      </p-accordionTab>\r\n      <p-accordionTab header=\"Header III\">\r\n          <p class=\"text-xs font-medium text-black\">\r\n              At vero eos et accusamus et iusto odio dignissimos...\r\n          </p>\r\n      </p-accordionTab>\r\n      <p-accordionTab header=\"Header IIII\" [disabled]=\"true\">\r\n          <p class=\"text-xs font-medium text-black\">\r\n              At vero eos et accusamus et iusto odio dignissimos...\r\n          </p>\r\n      </p-accordionTab>\r\n    </p-accordion>`\r\n  })\r\n}"
             },
             {
                 "name": "Disabled",
@@ -152,11 +172,11 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/ngx-hrm-corporate-ui/src/stories/components/button/button.stories.ts",
+                "file": "projects/ngx-hrm-corporate-ui/src/stories/components/accordion/accordion.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Meta<Button>",
-                "defaultValue": "{\r\n  title: 'Primeng/Button',\r\n  component: Button,\r\n  tags: ['autodocs'],\r\n  argTypes: {\r\n    link: {\r\n      control: 'boolean',\r\n    },\r\n    type: {\r\n      control: 'text',\r\n    },\r\n    loading: {\r\n      control: 'boolean',\r\n      description: ''\r\n    },\r\n    label: {\r\n      control: 'text'\r\n    },\r\n    badge: {\r\n      control: 'text'\r\n    },\r\n    text: {\r\n      control:'boolean'\r\n    },\r\n    raised: {\r\n      control: 'boolean',\r\n      description: 'Add a shadow to indicate elevation.'\r\n    },\r\n    rounded: {\r\n      control: 'boolean',\r\n      description: 'Add a circular border radius to the button.',\r\n    },\r\n    severity: {\r\n      control: {\r\n        type: 'select',\r\n      },\r\n      options: [null, 'success' , 'info' , 'warning' , 'danger' , 'help' , 'primary' , 'secondary' , 'contrast' ],\r\n      table: {\r\n        defaultValue: {\r\n          summary: undefined\r\n        }\r\n      },\r\n      description: 'Defines the style of the button.'\r\n    },\r\n    icon:{\r\n      control: 'select',\r\n      options: ['none', 'check icon', 'image icon'],\r\n      mapping: {\r\n        'none': null,\r\n        'check icon': 'pi pi-check',\r\n        'image icon': 'pi pi-image'\r\n      }\r\n    },\r\n    iconPos: {\r\n      control: 'radio',\r\n      options: ['right', 'left']\r\n    },\r\n    disabled: {\r\n      control: 'boolean',\r\n      description: 'When present, it specifies that the component should be disabled.',\r\n      name: 'disabled',\r\n    }\r\n  },\r\n  // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args\r\n  // args: { onClick: fn() },\r\n}"
+                "type": "Meta<Accordion>",
+                "defaultValue": "{\r\n  title: 'Primeng/Accordion',\r\n  component: Accordion,\r\n  tags: ['autodocs'],\r\n  argTypes: {\r\n    multiple: {\r\n      control: 'boolean',\r\n    },\r\n  },\r\n  decorators: [\r\n    moduleMetadata({\r\n      imports: [\r\n        AccordionModule,\r\n        CommonModule,\r\n        BrowserAnimationsModule,\r\n        ButtonModule,\r\n        BadgeModule,\r\n        AvatarModule\r\n      ]\r\n    })\r\n  ],\r\n}"
             },
             {
                 "name": "meta",
@@ -172,11 +192,11 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/ngx-hrm-corporate-ui/src/stories/components/select-with-search/select-with-search.stories.ts",
+                "file": "projects/ngx-hrm-corporate-ui/src/stories/components/button/button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Meta<Dropdown>",
-                "defaultValue": "{\r\n  title: 'Primeng/Dropdown',\r\n  decorators: [\r\n    moduleMetadata({\r\n      imports: [\r\n        CommonModule,\r\n        SharedModule,\r\n        BrowserAnimationsModule,\r\n        ChevronDownIcon,\r\n        OverlayModule,\r\n        TooltipModule,\r\n        DropdownModule,\r\n        SpinnerIcon,\r\n        FormsModule,\r\n        SpinnerModule,\r\n        ScrollerModule,\r\n        AutoFocusModule,\r\n        TimesIcon,\r\n        SearchIcon,\r\n        CheckIcon,\r\n        BlankIcon,\r\n        FloatLabelModule\r\n      ]\r\n    }),\r\n    componentWrapperDecorator((story) => `<p-floatLabel>${story}  <label for=\"float-label\">Select a something</label></p-floatLabel>`)\r\n  ],\r\n  render: (args: any, {id}) => {\r\n    args.onClick = () => {\r\n      const channel = (window as any).__STORYBOOK_ADDONS_CHANNEL__ as Channel;\r\n\r\n      channel.emit(UPDATE_STORY_ARGS, {\r\n        storyId: id,\r\n        updatedArgs: { loading: true, },\r\n        template: `<p-floatlabel><p-dropdown ${argsToTemplate(args)}></p-dropdown></p-floatlabel> `,\r\n      });\r\n      setTimeout(() => {\r\n        channel.emit(UPDATE_STORY_ARGS, {\r\n          storyId: id,\r\n          updatedArgs: { loading: false },\r\n          template: `<p-floatlabel><p-dropdown ${argsToTemplate(args)}></p-dropdown></p-floatlabel> `,\r\n        });\r\n      }, 2000);\r\n    };\r\n    return {\r\n      props: {\r\n        ...args,\r\n      },\r\n    }\r\n  },\r\n\r\n  component: Dropdown,\r\n  tags: ['autodocs'],\r\n  argTypes: {\r\n    options: [],\r\n    placeholder: {\r\n      control: 'text',\r\n      description: 'Indicates whether the placeholder is present.',\r\n    },\r\n    dataKey: {\r\n      control: 'text',\r\n      description: 'Indicates whether the datakey is present.',\r\n    },\r\n    inputId: {\r\n      control: 'text',\r\n      description: 'Indicated whether the floating label should be present.'\r\n    },\r\n    showClear: {\r\n      control: 'boolean',\r\n    },\r\n    loading: {\r\n      control: 'boolean',\r\n      description: 'Indicates whether the dropdown is in a loading state.',\r\n    },\r\n    styleClass: {\r\n      control: 'text',\r\n      description: 'CSS class for the component.',\r\n    },\r\n    readonly: {\r\n      control: 'boolean',\r\n      description: 'When true, the dropdown is read-only.',\r\n    },\r\n    required: {\r\n      control: 'boolean',\r\n      description: 'Specifies if the dropdown is required.',\r\n    },\r\n    virtualScroll: {\r\n      control: 'boolean',\r\n      description: 'Enables virtual scrolling for the dropdown.',\r\n    },\r\n    virtualScrollItemSize: {\r\n      control: 'number',\r\n      description: 'Specifies the item size for virtual scrolling.',\r\n    },\r\n    editable: {\r\n      control: 'boolean',\r\n      description: 'When true, the dropdown is editable.',\r\n    },\r\n    label: {\r\n      type: \"string\",\r\n      control: 'text',\r\n      description: 'Label for the dropdown.',\r\n    },\r\n    disabled: {\r\n      control: 'boolean',\r\n      description: 'Specifies if the component should be disabled.',\r\n      name: 'disabled',\r\n    },\r\n    // You can add more argTypes as needed\r\n  },\r\n\r\n  parameters: {\r\n    actions: {\r\n      handles: ['onClick', 'onChange'],\r\n    },\r\n    // Add more parameters if needed\r\n  },\r\n}"
+                "type": "Meta<Button>",
+                "defaultValue": "{\r\n  title: 'Primeng/Button',\r\n  component: Button,\r\n  tags: ['autodocs'],\r\n  argTypes: {\r\n    link: {\r\n      control: 'boolean',\r\n    },\r\n    type: {\r\n      control: 'text',\r\n    },\r\n    loading: {\r\n      control: 'boolean',\r\n      description: ''\r\n    },\r\n    label: {\r\n      control: 'text'\r\n    },\r\n    badge: {\r\n      control: 'text'\r\n    },\r\n    text: {\r\n      control:'boolean'\r\n    },\r\n    raised: {\r\n      control: 'boolean',\r\n      description: 'Add a shadow to indicate elevation.'\r\n    },\r\n    rounded: {\r\n      control: 'boolean',\r\n      description: 'Add a circular border radius to the button.',\r\n    },\r\n    severity: {\r\n      control: {\r\n        type: 'select',\r\n      },\r\n      options: [null, 'success' , 'info' , 'warning' , 'danger' , 'help' , 'primary' , 'secondary' , 'contrast' ],\r\n      table: {\r\n        defaultValue: {\r\n          summary: undefined\r\n        }\r\n      },\r\n      description: 'Defines the style of the button.'\r\n    },\r\n    icon:{\r\n      control: 'select',\r\n      options: ['none', 'check icon', 'image icon'],\r\n      mapping: {\r\n        'none': null,\r\n        'check icon': 'pi pi-check',\r\n        'image icon': 'pi pi-image'\r\n      }\r\n    },\r\n    iconPos: {\r\n      control: 'radio',\r\n      options: ['right', 'left']\r\n    },\r\n    disabled: {\r\n      control: 'boolean',\r\n      description: 'When present, it specifies that the component should be disabled.',\r\n      name: 'disabled',\r\n    }\r\n  },\r\n  // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args\r\n  // args: { onClick: fn() },\r\n}"
             },
             {
                 "name": "meta",
@@ -197,6 +217,36 @@
                 "deprecationMessage": "",
                 "type": "Meta<TabView>",
                 "defaultValue": "{\r\n  title: 'Primeng/Tab',\r\n  component: TabView,\r\n  tags: ['autodocs'],\r\n  argTypes: {\r\n  },\r\n  decorators: [\r\n    moduleMetadata({\r\n      imports: [\r\n        CommonModule,\r\n        TabViewModule,\r\n        BadgeModule,\r\n        AvatarModule\r\n      ]\r\n    })\r\n  ],\r\n  render: (args: any) => ({\r\n    template: `\r\n        <p-tabView>\r\n        <p-tabPanel header=\"Header I\">\r\n                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\r\n                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\r\n        </p-tabPanel>\r\n        <p-tabPanel header=\"Header II\">\r\n                Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim\r\n                ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Consectetur, adipisci velit, sed quia non numquam eius modi.\r\n        </p-tabPanel>\r\n        <p-tabPanel header=\"Header III\">\r\n                At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa\r\n                qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus.\r\n        </p-tabPanel>\r\n    </p-tabView>`\r\n  })\r\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ngx-hrm-corporate-ui/src/stories/components/table/table.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<Table>",
+                "defaultValue": "{\r\n  title: 'Primeng/Table',\r\n  decorators: [moduleMetadata({\r\n    imports: [TableModule, CommonModule,  SharedModule]\r\n  })],\r\n  component: Table,\r\n  tags: ['autodocs'],\r\n  argTypes: {\r\n    value: []\r\n  },\r\n  render: (args: any) => ({\r\n    template: `\r\n       <p-table [value]=\"${args.value}\" [tableStyle]=\"{ 'min-width': '50rem' }\">\r\n        <ng-template pTemplate=\"header\">\r\n            <tr>\r\n                <th>Code</th>\r\n                <th>Name</th>\r\n                <th>Category</th>\r\n                <th>Quantity</th>\r\n            </tr>\r\n        </ng-template>\r\n        <ng-template pTemplate=\"body\" let-product>\r\n            <tr>\r\n                <td>{{ product.code }}</td>\r\n                <td>{{ product.name }}</td>\r\n                <td>{{ product.category }}</td>\r\n                <td>{{ product.quantity }}</td>\r\n            </tr>\r\n        </ng-template>\r\n    </p-table>\r\n\r\n      `\r\n  })\r\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ngx-hrm-corporate-ui/src/stories/components/select-with-search/select-with-search.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<Dropdown>",
+                "defaultValue": "{\r\n  title: 'Primeng/Dropdown',\r\n  decorators: [\r\n    moduleMetadata({\r\n      imports: [\r\n        CommonModule,\r\n        SharedModule,\r\n        BrowserAnimationsModule,\r\n        ChevronDownIcon,\r\n        OverlayModule,\r\n        TooltipModule,\r\n        DropdownModule,\r\n        SpinnerIcon,\r\n        FormsModule,\r\n        SpinnerModule,\r\n        ScrollerModule,\r\n        AutoFocusModule,\r\n        TimesIcon,\r\n        SearchIcon,\r\n        CheckIcon,\r\n        BlankIcon,\r\n        FloatLabelModule\r\n      ]\r\n    }),\r\n    componentWrapperDecorator((story) => `<p-floatLabel>${story}  <label for=\"float-label\">Select a something</label></p-floatLabel>`)\r\n  ],\r\n  render: (args: any, {id}) => {\r\n    args.onClick = () => {\r\n      const channel = (window as any).__STORYBOOK_ADDONS_CHANNEL__ as Channel;\r\n\r\n      channel.emit(UPDATE_STORY_ARGS, {\r\n        storyId: id,\r\n        updatedArgs: { loading: true, },\r\n        template: `<p-floatlabel><p-dropdown ${argsToTemplate(args)}></p-dropdown></p-floatlabel> `,\r\n      });\r\n      setTimeout(() => {\r\n        channel.emit(UPDATE_STORY_ARGS, {\r\n          storyId: id,\r\n          updatedArgs: { loading: false },\r\n          template: `<p-floatlabel><p-dropdown ${argsToTemplate(args)}></p-dropdown></p-floatlabel> `,\r\n        });\r\n      }, 2000);\r\n    };\r\n    return {\r\n      props: {\r\n        ...args,\r\n      },\r\n    }\r\n  },\r\n\r\n  component: Dropdown,\r\n  tags: ['autodocs'],\r\n  argTypes: {\r\n    options: [],\r\n    placeholder: {\r\n      control: 'text',\r\n      description: 'Indicates whether the placeholder is present.',\r\n    },\r\n    dataKey: {\r\n      control: 'text',\r\n      description: 'Indicates whether the datakey is present.',\r\n    },\r\n    inputId: {\r\n      control: 'text',\r\n      description: 'Indicated whether the floating label should be present.'\r\n    },\r\n    showClear: {\r\n      control: 'boolean',\r\n    },\r\n    loading: {\r\n      control: 'boolean',\r\n      description: 'Indicates whether the dropdown is in a loading state.',\r\n    },\r\n    styleClass: {\r\n      control: 'text',\r\n      description: 'CSS class for the component.',\r\n    },\r\n    readonly: {\r\n      control: 'boolean',\r\n      description: 'When true, the dropdown is read-only.',\r\n    },\r\n    required: {\r\n      control: 'boolean',\r\n      description: 'Specifies if the dropdown is required.',\r\n    },\r\n    virtualScroll: {\r\n      control: 'boolean',\r\n      description: 'Enables virtual scrolling for the dropdown.',\r\n    },\r\n    virtualScrollItemSize: {\r\n      control: 'number',\r\n      description: 'Specifies the item size for virtual scrolling.',\r\n    },\r\n    editable: {\r\n      control: 'boolean',\r\n      description: 'When true, the dropdown is editable.',\r\n    },\r\n    label: {\r\n      type: \"string\",\r\n      control: 'text',\r\n      description: 'Label for the dropdown.',\r\n    },\r\n    disabled: {\r\n      control: 'boolean',\r\n      description: 'Specifies if the component should be disabled.',\r\n      name: 'disabled',\r\n    },\r\n    // You can add more argTypes as needed\r\n  },\r\n\r\n  parameters: {\r\n    actions: {\r\n      handles: ['onClick', 'onChange'],\r\n    },\r\n    // Add more parameters if needed\r\n  },\r\n}"
+            },
+            {
+                "name": "Multiple",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ngx-hrm-corporate-ui/src/stories/components/accordion/accordion.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  args: {\r\n    multiple: true,\r\n  },\r\n  render: (args: any) => ({\r\n    template: `\r\n    <p-accordion [multiple]=\"${args.multiple}\" [activeIndex]=\"${0}\">\r\n      <p-accordionTab header=\"Header I\">\r\n          <p class=\"text-xs font-medium text-black\">\r\n              Lorem ipsum dolor sit amet...\r\n          </p>\r\n      </p-accordionTab>\r\n      <p-accordionTab header=\"Header II\">\r\n          <p class=\"text-xs font-medium text-black\">\r\n              Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium...\r\n          </p>\r\n      </p-accordionTab>\r\n      <p-accordionTab header=\"Header III\">\r\n          <p class=\"text-xs font-medium text-black\">\r\n              At vero eos et accusamus et iusto odio dignissimos...\r\n          </p>\r\n      </p-accordionTab>\r\n    </p-accordion>`\r\n  })\r\n}"
             },
             {
                 "name": "Outlined",
@@ -236,17 +286,17 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Preview",
-                "defaultValue": "{\r\n  parameters: {\r\n    controls: {\r\n      matchers: {\r\n        color: /(background|color)$/i,\r\n        date: /Date$/i,\r\n      },\r\n    },\r\n  },\r\n}"
+                "defaultValue": "{\n  parameters: {\n    controls: {\n      matchers: {\n        color: /(background|color)$/i,\n        date: /Date$/i,\n      },\n    },\n  },\n}"
             },
             {
                 "name": "Primary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/ngx-hrm-corporate-ui/src/stories/components/button/button.stories.ts",
+                "file": "projects/ngx-hrm-corporate-ui/src/stories/components/accordion/accordion.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\r\n  args: {\r\n    label: 'Button',\r\n  },\r\n}"
+                "defaultValue": "{\r\n  render: (args: any) => ({\r\n    template: `\r\n    <p-accordion [multiple]=\"${args.multiple}\" [activeIndex]=\"${0}\">\r\n      <p-accordionTab header=\"Header I\">\r\n          <p class=\"text-xs font-medium text-black\">\r\n              Lorem ipsum dolor sit amet...\r\n          </p>\r\n      </p-accordionTab>\r\n      <p-accordionTab header=\"Header II\">\r\n          <p class=\"text-xs font-medium text-black\">\r\n              Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium...\r\n          </p>\r\n      </p-accordionTab>\r\n      <p-accordionTab header=\"Header III\">\r\n          <p class=\"text-xs font-medium text-black\">\r\n              At vero eos et accusamus et iusto odio dignissimos...\r\n          </p>\r\n      </p-accordionTab>\r\n    </p-accordion>`\r\n  })\r\n}"
             },
             {
                 "name": "Primary",
@@ -257,6 +307,16 @@
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\r\n  args: {\r\n    value: 50,\r\n  },\r\n}"
+            },
+            {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ngx-hrm-corporate-ui/src/stories/components/button/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  args: {\r\n    label: 'Button',\r\n  },\r\n}"
             },
             {
                 "name": "Primary",
@@ -322,11 +382,21 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "projects/ngx-hrm-corporate-ui/src/stories/components/accordion/accordion.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  render: (args: any) => ({\r\n    template: `\r\n    <p-accordion [multiple]=\"${args.multiple}\" class=\"w-full\" expandIcon=\"pi pi-plus\" collapseIcon=\"pi pi-minus\">\r\n        <p-accordionTab>\r\n            <ng-template pTemplate=\"header\">\r\n                <span class=\"flex items-center gap-2 w-full\">\r\n                    <p-avatar\r\n                        image=\"https://primefaces.org/cdn/primeng/images/demo/avatar/amyelsner.png\"\r\n                        shape=\"circle\" />\r\n                    <span class=\"font-bold white-space-nowrap\">\r\n                        Amy Elsner\r\n                    </span>\r\n                    <p-badge value=\"3\" class=\"ml-auto mr-2\" />\r\n                </span>\r\n            </ng-template>\r\n            <p class=\"m-0 text-xs font-medium text-black\">\r\n                Lorem ipsum dolor sit amet...\r\n            </p>\r\n        </p-accordionTab>\r\n        <p-accordionTab>\r\n            <ng-template pTemplate=\"header\">\r\n                <span class=\"flex items-center gap-2 w-full\">\r\n                    <p-avatar\r\n                        image=\"https://primefaces.org/cdn/primeng/images/demo/avatar/onyamalimba.png\"\r\n                        shape=\"circle\" />\r\n                    <span class=\"font-bold white-space-nowrap\">\r\n                        Onyama Limba\r\n                    </span>\r\n                    <p-badge value=\"4\" class=\"ml-auto mr-2\" />\r\n                </span>\r\n            </ng-template>\r\n            <p class=\"m-0 text-xs font-medium text-black\">\r\n                Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium...\r\n            </p>\r\n        </p-accordionTab>\r\n        <p-accordionTab>\r\n            <ng-template pTemplate=\"header\">\r\n                <span class=\"flex items-center gap-2 w-full\">\r\n                    <p-avatar\r\n                        image=\"https://primefaces.org/cdn/primeng/images/demo/avatar/ionibowcher.png\"\r\n                        shape=\"circle\" />\r\n                    <span class=\"font-bold white-space-nowrap\">\r\n                        Ioni Bowcher\r\n                    </span>\r\n                    <p-badge value=\"2\" class=\"ml-auto mr-2\" />\r\n                </span>\r\n            </ng-template>\r\n            <p class=\"m-0 text-xs font-medium text-black\">\r\n                At vero eos et accusamus et iusto odio dignissimos...\r\n            </p>\r\n        </p-accordionTab>\r\n    </p-accordion>`\r\n  })\r\n}"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "projects/ngx-hrm-corporate-ui/src/stories/components/tab/tab.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\r\n  render: (args: any) => ({\r\n    template: `\r\n<div class=\"card\">\r\n    <p-tabView styleClass=\"tabview-custom\">\r\n        <p-tabPanel>\r\n            <ng-template pTemplate=\"header\">\r\n                <div class=\"flex items-center gap-2\">\r\n                    <p-avatar\r\n                        image=\"https://primefaces.org/cdn/primeng/images/demo/avatar/amyelsner.png\"\r\n                        shape=\"circle\" />\r\n                    <span class=\"font-bold white-space-nowrap m-0\">\r\n                        Amy Elsner\r\n                    </span>\r\n                </div>\r\n            </ng-template>\r\n            <p>\r\n                Lorem ipsum dolor sit amet, consectetur adipiscing elit...\r\n            </p>\r\n        </p-tabPanel>\r\n        <p-tabPanel header=\"Header II\">\r\n            <ng-template pTemplate=\"header\">\r\n                <div class=\"flex items-center gap-2\">\r\n                    <p-avatar\r\n                        image=\"https://primefaces.org/cdn/primeng/images/demo/avatar/onyamalimba.png\"\r\n                        shape=\"circle\" />\r\n                    <span class=\"font-bold white-space-nowrap m-0\">\r\n                        Onyama Limba\r\n                    </span>\r\n                </div>\r\n            </ng-template>\r\n            <p>\r\n                Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium...\r\n            </p>\r\n        </p-tabPanel>\r\n        <p-tabPanel header=\"Header III\">\r\n            <ng-template pTemplate=\"header\">\r\n                <div class=\"flex items-center gap-2\">\r\n                    <p-avatar\r\n                        image=\"https://primefaces.org/cdn/primeng/images/demo/avatar/ionibowcher.png\"\r\n                        shape=\"circle\" />\r\n                    <span class=\"font-bold white-space-nowrap m-0\">\r\n                        Ioni Bowcher\r\n                    </span>\r\n                    <p-badge value=\"2\" />\r\n                </div>\r\n            </ng-template>\r\n            <p>\r\n                At vero eos et accusamus et iusto odio dignissimos...\r\n            </p>\r\n        </p-tabPanel>\r\n    </p-tabView>\r\n</div>`\r\n  })\r\n}"
+                "defaultValue": "{\r\n  render: (args: any) => ({\r\n    template: `\r\n<div class=\"card\">\r\n    <p-tabView styleClass=\"tabview-custom\">\r\n        <p-tabPanel>\r\n            <ng-template pTemplate=\"header\">\r\n                <div class=\"flex items-center gap-2\">\r\n                    <p-avatar\r\n                        image=\"https://primefaces.org/cdn/primeng/images/demo/avatar/amyelsner.png\"\r\n                        shape=\"circle\" />\r\n                    <span class=\"font-bold whitespace-nowrap m-0\">\r\n                        Amy Elsner\r\n                    </span>\r\n                </div>\r\n            </ng-template>\r\n            <p>\r\n                Lorem ipsum dolor sit amet, consectetur adipiscing elit...\r\n            </p>\r\n        </p-tabPanel>\r\n        <p-tabPanel header=\"Header II\">\r\n            <ng-template pTemplate=\"header\">\r\n                <div class=\"flex items-center gap-2\">\r\n                    <p-avatar\r\n                        image=\"https://primefaces.org/cdn/primeng/images/demo/avatar/onyamalimba.png\"\r\n                        shape=\"circle\" />\r\n                    <span class=\"font-bold whitespace-nowrap m-0\">\r\n                        Onyama Limba\r\n                    </span>\r\n                </div>\r\n            </ng-template>\r\n            <p>\r\n                Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium...\r\n            </p>\r\n        </p-tabPanel>\r\n        <p-tabPanel header=\"Header III\">\r\n            <ng-template pTemplate=\"header\">\r\n                <div class=\"flex items-center gap-2\">\r\n                    <p-avatar\r\n                        image=\"https://primefaces.org/cdn/primeng/images/demo/avatar/ionibowcher.png\"\r\n                        shape=\"circle\" />\r\n                    <span class=\"font-bold whitespace-nowrap m-0\">\r\n                        Ioni Bowcher\r\n                    </span>\r\n                    <p-badge value=\"2\" />\r\n                </div>\r\n            </ng-template>\r\n            <p>\r\n                At vero eos et accusamus et iusto odio dignissimos...\r\n            </p>\r\n        </p-tabPanel>\r\n    </p-tabView>\r\n</div>`\r\n  })\r\n}"
             },
             {
                 "name": "Text",
@@ -355,8 +425,8 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<Button>",
-                "file": "projects/ngx-hrm-corporate-ui/src/stories/components/button/button.stories.ts",
+                "rawtype": "StoryObj<Accordion>",
+                "file": "projects/ngx-hrm-corporate-ui/src/stories/components/accordion/accordion.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -377,8 +447,8 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<Dropdown>",
-                "file": "projects/ngx-hrm-corporate-ui/src/stories/components/select-with-search/select-with-search.stories.ts",
+                "rawtype": "StoryObj<Button>",
+                "file": "projects/ngx-hrm-corporate-ui/src/stories/components/button/button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -401,6 +471,28 @@
                 "subtype": "typealias",
                 "rawtype": "StoryObj<TabView>",
                 "file": "projects/ngx-hrm-corporate-ui/src/stories/components/tab/tab.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<Table>",
+                "file": "projects/ngx-hrm-corporate-ui/src/stories/components/table/table.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<Dropdown>",
+                "file": "projects/ngx-hrm-corporate-ui/src/stories/components/select-with-search/select-with-search.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -458,7 +550,29 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\r\n  render: (args: any) => ({\r\n    template: `\r\n<div class=\"card\">\r\n    <p-tabView styleClass=\"tabview-custom\">\r\n        <p-tabPanel>\r\n            <ng-template pTemplate=\"header\">\r\n                <div class=\"flex items-center gap-2\">\r\n                    <p-avatar\r\n                        image=\"https://primefaces.org/cdn/primeng/images/demo/avatar/amyelsner.png\"\r\n                        shape=\"circle\" />\r\n                    <span class=\"font-bold white-space-nowrap m-0\">\r\n                        Amy Elsner\r\n                    </span>\r\n                </div>\r\n            </ng-template>\r\n            <p>\r\n                Lorem ipsum dolor sit amet, consectetur adipiscing elit...\r\n            </p>\r\n        </p-tabPanel>\r\n        <p-tabPanel header=\"Header II\">\r\n            <ng-template pTemplate=\"header\">\r\n                <div class=\"flex items-center gap-2\">\r\n                    <p-avatar\r\n                        image=\"https://primefaces.org/cdn/primeng/images/demo/avatar/onyamalimba.png\"\r\n                        shape=\"circle\" />\r\n                    <span class=\"font-bold white-space-nowrap m-0\">\r\n                        Onyama Limba\r\n                    </span>\r\n                </div>\r\n            </ng-template>\r\n            <p>\r\n                Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium...\r\n            </p>\r\n        </p-tabPanel>\r\n        <p-tabPanel header=\"Header III\">\r\n            <ng-template pTemplate=\"header\">\r\n                <div class=\"flex items-center gap-2\">\r\n                    <p-avatar\r\n                        image=\"https://primefaces.org/cdn/primeng/images/demo/avatar/ionibowcher.png\"\r\n                        shape=\"circle\" />\r\n                    <span class=\"font-bold white-space-nowrap m-0\">\r\n                        Ioni Bowcher\r\n                    </span>\r\n                    <p-badge value=\"2\" />\r\n                </div>\r\n            </ng-template>\r\n            <p>\r\n                At vero eos et accusamus et iusto odio dignissimos...\r\n            </p>\r\n        </p-tabPanel>\r\n    </p-tabView>\r\n</div>`\r\n  })\r\n}"
+                    "defaultValue": "{\r\n  render: (args: any) => ({\r\n    template: `\r\n<div class=\"card\">\r\n    <p-tabView styleClass=\"tabview-custom\">\r\n        <p-tabPanel>\r\n            <ng-template pTemplate=\"header\">\r\n                <div class=\"flex items-center gap-2\">\r\n                    <p-avatar\r\n                        image=\"https://primefaces.org/cdn/primeng/images/demo/avatar/amyelsner.png\"\r\n                        shape=\"circle\" />\r\n                    <span class=\"font-bold whitespace-nowrap m-0\">\r\n                        Amy Elsner\r\n                    </span>\r\n                </div>\r\n            </ng-template>\r\n            <p>\r\n                Lorem ipsum dolor sit amet, consectetur adipiscing elit...\r\n            </p>\r\n        </p-tabPanel>\r\n        <p-tabPanel header=\"Header II\">\r\n            <ng-template pTemplate=\"header\">\r\n                <div class=\"flex items-center gap-2\">\r\n                    <p-avatar\r\n                        image=\"https://primefaces.org/cdn/primeng/images/demo/avatar/onyamalimba.png\"\r\n                        shape=\"circle\" />\r\n                    <span class=\"font-bold whitespace-nowrap m-0\">\r\n                        Onyama Limba\r\n                    </span>\r\n                </div>\r\n            </ng-template>\r\n            <p>\r\n                Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium...\r\n            </p>\r\n        </p-tabPanel>\r\n        <p-tabPanel header=\"Header III\">\r\n            <ng-template pTemplate=\"header\">\r\n                <div class=\"flex items-center gap-2\">\r\n                    <p-avatar\r\n                        image=\"https://primefaces.org/cdn/primeng/images/demo/avatar/ionibowcher.png\"\r\n                        shape=\"circle\" />\r\n                    <span class=\"font-bold whitespace-nowrap m-0\">\r\n                        Ioni Bowcher\r\n                    </span>\r\n                    <p-badge value=\"2\" />\r\n                </div>\r\n            </ng-template>\r\n            <p>\r\n                At vero eos et accusamus et iusto odio dignissimos...\r\n            </p>\r\n        </p-tabPanel>\r\n    </p-tabView>\r\n</div>`\r\n  })\r\n}"
+                }
+            ],
+            "projects/ngx-hrm-corporate-ui/src/stories/components/table/table.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ngx-hrm-corporate-ui/src/stories/components/table/table.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  args: {\r\n\r\n    value: [\r\n      {\r\n        id: '1000',\r\n        code: 'f230fh0g3',\r\n        name: 'Bamboo Watch',\r\n        description: 'Product Description',\r\n        image: 'bamboo-watch.jpg',\r\n        price: 65,\r\n        category: 'Accessories',\r\n        quantity: 12,\r\n        inventoryStatus: 'INSTOCK',\r\n        rating: 5\r\n      },\r\n      {\r\n        id: '1000',\r\n        code: 'f230fh0g3',\r\n        name: 'Bamboo Watch',\r\n        description: 'Product Description',\r\n        image: 'bamboo-watch.jpg',\r\n        price: 80,\r\n        category: 'Accessories',\r\n        quantity: 24,\r\n        inventoryStatus: 'INSTOCK',\r\n        rating: 5\r\n      },\r\n      {\r\n        id: '1000',\r\n        code: 'f230fh0g3',\r\n        name: 'Bamboo Watch',\r\n        description: 'Product Description',\r\n        image: 'bamboo-watch.jpg',\r\n        price: 34,\r\n        category: 'Accessories',\r\n        quantity: 24,\r\n        inventoryStatus: 'INSTOCK',\r\n        rating: 5\r\n      },\r\n    ]\r\n  },\r\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ngx-hrm-corporate-ui/src/stories/components/table/table.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<Table>",
+                    "defaultValue": "{\r\n  title: 'Primeng/Table',\r\n  decorators: [moduleMetadata({\r\n    imports: [TableModule, CommonModule,  SharedModule]\r\n  })],\r\n  component: Table,\r\n  tags: ['autodocs'],\r\n  argTypes: {\r\n    value: []\r\n  },\r\n  render: (args: any) => ({\r\n    template: `\r\n       <p-table [value]=\"${args.value}\" [tableStyle]=\"{ 'min-width': '50rem' }\">\r\n        <ng-template pTemplate=\"header\">\r\n            <tr>\r\n                <th>Code</th>\r\n                <th>Name</th>\r\n                <th>Category</th>\r\n                <th>Quantity</th>\r\n            </tr>\r\n        </ng-template>\r\n        <ng-template pTemplate=\"body\" let-product>\r\n            <tr>\r\n                <td>{{ product.code }}</td>\r\n                <td>{{ product.name }}</td>\r\n                <td>{{ product.category }}</td>\r\n                <td>{{ product.quantity }}</td>\r\n            </tr>\r\n        </ng-template>\r\n    </p-table>\r\n\r\n      `\r\n  })\r\n}"
                 }
             ],
             "projects/ngx-hrm-corporate-ui/src/stories/components/select-with-search/select-with-search.stories.ts": [
@@ -501,6 +615,58 @@
                     "deprecationMessage": "",
                     "type": "Story",
                     "defaultValue": "{\r\n  args: {\r\n    optionLabel:'name',\r\n    dataKey:'data-testid',\r\n    editable: true,\r\n    loading: true,\r\n    virtualScroll: true,\r\n    options: [\r\n      { name: 'New York', code: 'NY' },\r\n      { name: 'Rome', code: 'RM' },\r\n      { name: 'London', code: 'LDN' },\r\n      { name: 'Istanbul', code: 'IST' },\r\n      { name: 'Paris', code: 'PRS' },\r\n      { name: 'New York', code: 'NY' },\r\n      { name: 'Rome', code: 'RM' },\r\n      { name: 'London', code: 'LDN' },\r\n      { name: 'Istanbul', code: 'IST' },\r\n      { name: 'Paris', code: 'PRS' },\r\n      { name: 'New York', code: 'NY' },\r\n      { name: 'Rome', code: 'RM' },\r\n      { name: 'London', code: 'LDN' },\r\n      { name: 'Istanbul', code: 'IST' },\r\n      { name: 'Paris', code: 'PRS' }\r\n    ],\r\n    placeholder: 'Select a city' as unknown as Signal<any>,\r\n  },\r\n}"
+                }
+            ],
+            "projects/ngx-hrm-corporate-ui/src/stories/components/accordion/accordion.stories.ts": [
+                {
+                    "name": "Disabled",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ngx-hrm-corporate-ui/src/stories/components/accordion/accordion.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  render: (args: any) => ({\r\n    template: `\r\n    <p-accordion [multiple]=\"${args.multiple}\" [activeIndex]=\"${0}\">\r\n      <p-accordionTab header=\"Header I\">\r\n          <p class=\"text-xs font-medium text-black\">\r\n              Lorem ipsum dolor sit amet...\r\n          </p>\r\n      </p-accordionTab>\r\n      <p-accordionTab header=\"Header II\">\r\n          <p class=\"text-xs font-medium text-black\">\r\n              Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium...\r\n          </p>\r\n      </p-accordionTab>\r\n      <p-accordionTab header=\"Header III\">\r\n          <p class=\"text-xs font-medium text-black\">\r\n              At vero eos et accusamus et iusto odio dignissimos...\r\n          </p>\r\n      </p-accordionTab>\r\n      <p-accordionTab header=\"Header IIII\" [disabled]=\"true\">\r\n          <p class=\"text-xs font-medium text-black\">\r\n              At vero eos et accusamus et iusto odio dignissimos...\r\n          </p>\r\n      </p-accordionTab>\r\n    </p-accordion>`\r\n  })\r\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ngx-hrm-corporate-ui/src/stories/components/accordion/accordion.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<Accordion>",
+                    "defaultValue": "{\r\n  title: 'Primeng/Accordion',\r\n  component: Accordion,\r\n  tags: ['autodocs'],\r\n  argTypes: {\r\n    multiple: {\r\n      control: 'boolean',\r\n    },\r\n  },\r\n  decorators: [\r\n    moduleMetadata({\r\n      imports: [\r\n        AccordionModule,\r\n        CommonModule,\r\n        BrowserAnimationsModule,\r\n        ButtonModule,\r\n        BadgeModule,\r\n        AvatarModule\r\n      ]\r\n    })\r\n  ],\r\n}"
+                },
+                {
+                    "name": "Multiple",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ngx-hrm-corporate-ui/src/stories/components/accordion/accordion.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  args: {\r\n    multiple: true,\r\n  },\r\n  render: (args: any) => ({\r\n    template: `\r\n    <p-accordion [multiple]=\"${args.multiple}\" [activeIndex]=\"${0}\">\r\n      <p-accordionTab header=\"Header I\">\r\n          <p class=\"text-xs font-medium text-black\">\r\n              Lorem ipsum dolor sit amet...\r\n          </p>\r\n      </p-accordionTab>\r\n      <p-accordionTab header=\"Header II\">\r\n          <p class=\"text-xs font-medium text-black\">\r\n              Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium...\r\n          </p>\r\n      </p-accordionTab>\r\n      <p-accordionTab header=\"Header III\">\r\n          <p class=\"text-xs font-medium text-black\">\r\n              At vero eos et accusamus et iusto odio dignissimos...\r\n          </p>\r\n      </p-accordionTab>\r\n    </p-accordion>`\r\n  })\r\n}"
+                },
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ngx-hrm-corporate-ui/src/stories/components/accordion/accordion.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  render: (args: any) => ({\r\n    template: `\r\n    <p-accordion [multiple]=\"${args.multiple}\" [activeIndex]=\"${0}\">\r\n      <p-accordionTab header=\"Header I\">\r\n          <p class=\"text-xs font-medium text-black\">\r\n              Lorem ipsum dolor sit amet...\r\n          </p>\r\n      </p-accordionTab>\r\n      <p-accordionTab header=\"Header II\">\r\n          <p class=\"text-xs font-medium text-black\">\r\n              Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium...\r\n          </p>\r\n      </p-accordionTab>\r\n      <p-accordionTab header=\"Header III\">\r\n          <p class=\"text-xs font-medium text-black\">\r\n              At vero eos et accusamus et iusto odio dignissimos...\r\n          </p>\r\n      </p-accordionTab>\r\n    </p-accordion>`\r\n  })\r\n}"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ngx-hrm-corporate-ui/src/stories/components/accordion/accordion.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  render: (args: any) => ({\r\n    template: `\r\n    <p-accordion [multiple]=\"${args.multiple}\" class=\"w-full\" expandIcon=\"pi pi-plus\" collapseIcon=\"pi pi-minus\">\r\n        <p-accordionTab>\r\n            <ng-template pTemplate=\"header\">\r\n                <span class=\"flex items-center gap-2 w-full\">\r\n                    <p-avatar\r\n                        image=\"https://primefaces.org/cdn/primeng/images/demo/avatar/amyelsner.png\"\r\n                        shape=\"circle\" />\r\n                    <span class=\"font-bold white-space-nowrap\">\r\n                        Amy Elsner\r\n                    </span>\r\n                    <p-badge value=\"3\" class=\"ml-auto mr-2\" />\r\n                </span>\r\n            </ng-template>\r\n            <p class=\"m-0 text-xs font-medium text-black\">\r\n                Lorem ipsum dolor sit amet...\r\n            </p>\r\n        </p-accordionTab>\r\n        <p-accordionTab>\r\n            <ng-template pTemplate=\"header\">\r\n                <span class=\"flex items-center gap-2 w-full\">\r\n                    <p-avatar\r\n                        image=\"https://primefaces.org/cdn/primeng/images/demo/avatar/onyamalimba.png\"\r\n                        shape=\"circle\" />\r\n                    <span class=\"font-bold white-space-nowrap\">\r\n                        Onyama Limba\r\n                    </span>\r\n                    <p-badge value=\"4\" class=\"ml-auto mr-2\" />\r\n                </span>\r\n            </ng-template>\r\n            <p class=\"m-0 text-xs font-medium text-black\">\r\n                Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium...\r\n            </p>\r\n        </p-accordionTab>\r\n        <p-accordionTab>\r\n            <ng-template pTemplate=\"header\">\r\n                <span class=\"flex items-center gap-2 w-full\">\r\n                    <p-avatar\r\n                        image=\"https://primefaces.org/cdn/primeng/images/demo/avatar/ionibowcher.png\"\r\n                        shape=\"circle\" />\r\n                    <span class=\"font-bold white-space-nowrap\">\r\n                        Ioni Bowcher\r\n                    </span>\r\n                    <p-badge value=\"2\" class=\"ml-auto mr-2\" />\r\n                </span>\r\n            </ng-template>\r\n            <p class=\"m-0 text-xs font-medium text-black\">\r\n                At vero eos et accusamus et iusto odio dignissimos...\r\n            </p>\r\n        </p-accordionTab>\r\n    </p-accordion>`\r\n  })\r\n}"
                 }
             ],
             "projects/ngx-hrm-corporate-ui/src/stories/components/button/button.stories.ts": [
@@ -756,20 +922,20 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Preview",
-                    "defaultValue": "{\r\n  parameters: {\r\n    controls: {\r\n      matchers: {\r\n        color: /(background|color)$/i,\r\n        date: /Date$/i,\r\n      },\r\n    },\r\n  },\r\n}"
+                    "defaultValue": "{\n  parameters: {\n    controls: {\n      matchers: {\n        color: /(background|color)$/i,\n        date: /Date$/i,\n      },\n    },\n  },\n}"
                 }
             ]
         },
         "groupedFunctions": {},
         "groupedEnumerations": {},
         "groupedTypeAliases": {
-            "projects/ngx-hrm-corporate-ui/src/stories/components/button/button.stories.ts": [
+            "projects/ngx-hrm-corporate-ui/src/stories/components/accordion/accordion.stories.ts": [
                 {
                     "name": "Story",
                     "ctype": "miscellaneous",
                     "subtype": "typealias",
-                    "rawtype": "StoryObj<Button>",
-                    "file": "projects/ngx-hrm-corporate-ui/src/stories/components/button/button.stories.ts",
+                    "rawtype": "StoryObj<Accordion>",
+                    "file": "projects/ngx-hrm-corporate-ui/src/stories/components/accordion/accordion.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -789,13 +955,13 @@
                     "kind": 183
                 }
             ],
-            "projects/ngx-hrm-corporate-ui/src/stories/components/select-with-search/select-with-search.stories.ts": [
+            "projects/ngx-hrm-corporate-ui/src/stories/components/button/button.stories.ts": [
                 {
                     "name": "Story",
                     "ctype": "miscellaneous",
                     "subtype": "typealias",
-                    "rawtype": "StoryObj<Dropdown>",
-                    "file": "projects/ngx-hrm-corporate-ui/src/stories/components/select-with-search/select-with-search.stories.ts",
+                    "rawtype": "StoryObj<Button>",
+                    "file": "projects/ngx-hrm-corporate-ui/src/stories/components/button/button.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -827,6 +993,32 @@
                     "description": "",
                     "kind": 183
                 }
+            ],
+            "projects/ngx-hrm-corporate-ui/src/stories/components/table/table.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<Table>",
+                    "file": "projects/ngx-hrm-corporate-ui/src/stories/components/table/table.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "projects/ngx-hrm-corporate-ui/src/stories/components/select-with-search/select-with-search.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<Dropdown>",
+                    "file": "projects/ngx-hrm-corporate-ui/src/stories/components/select-with-search/select-with-search.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
             ]
         }
     },
@@ -841,6 +1033,56 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "preview",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ngx-hrm-corporate-ui/src/stories/components/accordion/accordion.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Disabled",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ngx-hrm-corporate-ui/src/stories/components/accordion/accordion.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ngx-hrm-corporate-ui/src/stories/components/accordion/accordion.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Multiple",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ngx-hrm-corporate-ui/src/stories/components/accordion/accordion.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Primary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ngx-hrm-corporate-ui/src/stories/components/accordion/accordion.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -1171,6 +1413,26 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ngx-hrm-corporate-ui/src/stories/components/table/table.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ngx-hrm-corporate-ui/src/stories/components/table/table.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
