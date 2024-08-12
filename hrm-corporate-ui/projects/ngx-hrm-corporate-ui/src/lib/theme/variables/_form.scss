@@ -453,7 +453,7 @@ $calendarCellDatePaddingSM: 0;
 
 /// Width of an inputswitch
 /// @group form
-$inputSwitchWidth: 3rem;
+$inputSwitchWidth: 3.375rem;
 
 /// Height of an inputswitch
 /// @group form
@@ -465,11 +465,11 @@ $inputSwitchBorderRadius: 30px;
 
 /// Width of an inputswitch handle
 /// @group form
-$inputSwitchHandleWidth: 1.250rem;
+$inputSwitchHandleWidth: 1.5rem;
 
 /// Height of an inputswitch handle
 /// @group form
-$inputSwitchHandleHeight: 1.250rem;
+$inputSwitchHandleHeight: 1.5rem;
 
 /// Border radius of an inputswitch handle
 /// @group form
@@ -477,15 +477,15 @@ $inputSwitchHandleBorderRadius: 50%;
 
 /// Padding of an inputswitch slider
 /// @group form
-$inputSwitchSliderPadding: .25rem;
+$inputSwitchSliderPadding: .125rem;
 
 /// Background color of an inputswitch slider when unselected
 /// @group form
-$inputSwitchSliderOffBg: #ced4da;
+$inputSwitchSliderOffBg: #CBD5E1;
 
 /// Background color of an inputswitch handle when unselected
 /// @group form
-$inputSwitchHandleOffBg: #ffffff;
+$inputSwitchHandleOffBg: #64748B;
 
 /// Hover background color of an inputswitch slider when unselected
 /// @group form
@@ -493,15 +493,15 @@ $inputSwitchSliderOffHoverBg: #c3cad2;
 
 /// Background color of an inputswitch slider when selected
 /// @group form
-$inputSwitchSliderOnBg: $primaryColor;
+$inputSwitchSliderOnBg: $inputSwitchSliderOffBg;
 
 /// Hover background color of an inputswitch slider when selected
 /// @group form
-$inputSwitchSliderOnHoverBg: $primaryDarkColor;
+$inputSwitchSliderOnHoverBg: $inputSwitchSliderOffHoverBg;
 
 /// Background color of an inputswitch handle when selected
 /// @group form
-$inputSwitchHandleOnBg: #ffffff;
+$inputSwitchHandleOnBg: $primaryColor;
 
 /// Height for the progress bar of a fileupload
 /// @group input
@@ -511,7 +511,7 @@ $fileUploadProgressBarHeight: .25rem;
 /// @group input
 $fileUploadContentPadding: 2rem 1rem;
 
-/// 
+///
 /// @group input
 $fileUploadContentHoverBorder: 1px dashed #e9ecef !default;
 
