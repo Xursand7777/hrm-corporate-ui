@@ -1,6 +1,12 @@
-import { componentWrapperDecorator, Meta, moduleMetadata, StoryObj } from '@storybook/angular';
+import { CommonModule } from '@angular/common';
+import { importProvidersFrom } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { applicationConfig, componentWrapperDecorator, Meta, moduleMetadata, StoryObj } from '@storybook/angular';
+import { MessageService } from 'primeng/api';
 import { BadgeModule } from 'primeng/badge';
 import { Button, ButtonModule } from 'primeng/button';
+import { MenuModule } from 'primeng/menu';
+import { ToastModule } from 'primeng/toast'
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories
 const meta: Meta<Button> = {
@@ -10,9 +16,14 @@ const meta: Meta<Button> = {
     moduleMetadata({
       imports: [
         BadgeModule,
-        ButtonModule
+        ButtonModule,
+        MenuModule,
+        ToastModule,
+        BrowserAnimationsModule,
+        CommonModule
       ]
-    })
+    }),
+
   ],
   tags: ['autodocs'],
   argTypes: {
@@ -110,3 +121,25 @@ export const FilledFilterButton: Story = {
     `
   })
 };
+
+export const ButtonsMenu: Story = {
+  render: (args: any) => ({
+    template: `
+      <div class="flex justify-end">
+        <p-menu #menu [model]="[
+            {
+              label: 'Удалить',
+              icon: 'pi pi-trash'
+            },
+            {
+              label: 'Редактировать',
+              icon: 'pi pi-pencil'
+            }
+          ]" [popup]="true" class="[&_.p-menuitem-text]:font-semibold [&_.p-menuitem-text]:text-md"/>
+        <p-button (onClick)="menu.toggle($event)" icon="pi pi-ellipsis-v" [text]="true" [severity]="'secondary'" />
+      </div>
+    `
+  })
+
+};
+
