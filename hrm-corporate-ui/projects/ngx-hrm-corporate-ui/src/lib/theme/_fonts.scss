@@ -65,7 +65,7 @@
 @font-face {
   font-family: 'San Francisco';
   src: url('font/SFProDisplay-Thin.woff2') format('woff2');
-  font-weight: normal;
+  font-weight: 300;
   font-style: normal;
   font-display: swap;
 }
@@ -73,15 +73,15 @@
 @font-face {
   font-family: 'San Francisco';
   src: url('font/SFProDisplay-ThinItalic.woff2') format('woff2');
-  font-weight: normal;
-  font-style: normal;
+  font-weight: 300;
+  font-style: italic;
   font-display: swap;
 }
 
 @font-face {
   font-family: 'San Francisco';
   src: url('font/SFProDisplay-Ultralight.woff2') format('woff2');
-  font-weight: normal;
+  font-weight: 200;
   font-style: normal;
   font-display: swap;
 }
@@ -89,8 +89,8 @@
 @font-face {
   font-family: 'San Francisco';
   src: url('font/SFProDisplay-UltralightItalic.woff2') format('woff2');
-  font-weight: normal;
-  font-style: normal;
+  font-weight: 200;
+  font-style: italic;
   font-display: swap;
 }
 

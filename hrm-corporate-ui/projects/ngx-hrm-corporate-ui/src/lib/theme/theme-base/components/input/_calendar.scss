@@ -60,7 +60,7 @@ p-calendar.ng-dirty.ng-invalid > .p-calendar > .p-inputtext {
     }
 
     table {
-        font-size: $fontSize;
+        font-size: calc($fontSize/1.2);
         margin: $calendarTableMargin;
 
         th {
@@ -242,7 +242,7 @@ p-calendar.p-calendar-clearable {
     .p-inputtext {
         padding-right: nth($inputPadding, 2) * 2 + $primeIconFontSize;
     }
-    
+
     .p-calendar-clear-icon {
         color: $inputIconColor;
         right: nth($inputPadding, 2);

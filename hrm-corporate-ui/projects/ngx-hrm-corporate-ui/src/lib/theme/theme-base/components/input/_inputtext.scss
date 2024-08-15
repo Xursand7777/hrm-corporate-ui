@@ -16,10 +16,15 @@
 
     &:enabled:focus {
         @include focused-input();
+        box-shadow: $inputListItemFocusShadowSuccess;
     }
 
     &.ng-dirty.ng-invalid {
         @include invalid-input();
+        color: $errorColor;
+        &:enabled:focus {
+          box-shadow: $inputListItemFocusShadowError;
+      }
     }
 
     &.p-variant-filled {
