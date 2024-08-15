@@ -5,3 +5,16 @@
 
 @tailwind base;
 @tailwind utilities;
+
+.label-required:after {
+  content: " *";
+  color: var(--error-500);
+}
+
+.label-disabled {
+  color: $textSecondaryColor;
+  opacity: 0.5;
+  &.label-required::after{
+    color: $textSecondaryColor;
+  }
+}

@@ -24,15 +24,15 @@ $inputBorder: 1px solid #ced4da;
 
 /// Border of an input field in hover state
 /// @group form
-$inputHoverBorderColor: $primaryColor;
+$inputHoverBorderColor: var(--success-500);
 
 /// Border of an input field in focus state
 /// @group form
-$inputFocusBorderColor: $primaryColor;
+$inputFocusBorderColor: var(--success-500);
 
 /// Color of an input field in invalid state
 /// @group form
-$inputErrorBorderColor: #ced4da #ced4da #ced4da $errorColor;
+$inputErrorBorderColor: $errorColor;
 
 /// Text color of a placeholder
 /// @group form
@@ -121,6 +121,14 @@ $inputListItemMargin: 0;
 /// Box shadow for an individual itrem of an input list in focused state
 /// @group form
 $inputListItemFocusShadow: inset 0 0 0 0.15rem $focusOutlineColor;
+
+/// Box shadow for an individual itrem of an input list in focused state
+/// @group form
+$inputListItemFocusShadowSuccess: 0 0 0 0.15rem var(--success-200);
+
+/// Box shadow for an individual itrem of an input list in focused state
+/// @group form
+$inputListItemFocusShadowError: 0 0 0 0.15rem var(--error-200);
 
 /// Padding for a header of an input list
 /// @group form
